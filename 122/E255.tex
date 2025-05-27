@@ -1,0 +1,37 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS122 E255},subtitle={X-ENS PSI 2011},tags={mpsi},difficulty={}]
+  Soient $(a,b)\in\R^2$ avec $a<b$, $w\in\CC^0\left( [a,b],\R> \right)$ et $E=\R[X]$.
+
+  On considère le produit scalaire défini sur $E$ par
+  \begin{equation*}
+	\forall (P,Q)\in E^2, \PS PQ=\int_a^b w(x)P(x)Q(x)\d x.
+  \end{equation*}
+  \begin{enumerate}
+    \item Soit $n\in\N$. Montrer qu'il existe une unique famille $(P_0,\dotsc,P_n)$ de $\R_n[X]$ orthogonale pour $\PS{*}{*}$ et telle que, pour tout $i$, $P_i$ soit normalisé (coefficient dominant $1$) et de degré $i$.
+
+	\item Soit $n\in\N*$.
+    Montrer que $P_n$ a $n$ racines distinctes dans $]a,b[$.\\
+	  Soient $m\in\N*$ et $(c_1,\dotsc,c_m)\in\R^m$ un $m$-uplet de réels distincts deux à deux.
+    On pose
+	  \begin{equation*}
+		\forall k\in\ito{m}, b_k=\int_a^b w(x)\prod_{\substack{1\leq j\leq m\\ j\neq k}}\frac{x-c_j}{c_k-c_j} \d x.
+	  \end{equation*}
+
+	\item
+	  Montrer
+	  \begin{equation*}
+		\forall Q\in\R_{m-1}[X],
+		\int_a^b w(x)Q(x)\d x=\sum_{k=1}^m b_kQ(c_k).
+	  \end{equation*}
+	  
+	\item
+	  On suppose que $(c_1,\dotsc,c_m)$ sont les racines de $P_m$. Montrer
+	  \begin{equation*}
+		\forall Q\in\R_{2m-1}[X],
+		\int_a^b w(x)Q(x)\d x=\sum_{k=1}^m b_kQ(c_k).
+	  \end{equation*}
+  \end{enumerate}
+\end{exercise}
+\begin{solution}
+\end{solution}
+\end{enonce}

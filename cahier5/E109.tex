@@ -1,0 +1,54 @@
+\begin{enonce}
+\begin{exercise}[ID={Cahier RMS 5, E109, Centrale},subtitle={},tags={}]
+Soit $f(x)=\sum_{n>x}\sin^2\left( \frac{\pi x}{2n} \right) $.
+\begin{enumerate}
+\item Montrer que $f$ est définie sur $\R+$, continue par morceaux. 
+    
+    En un point où $f$ est discontinue, évaluer le saut de $f$ (différence entre la limite à droite et la limite à gauche).
+\item Montrer que $f(x)\geq \int_{E(x)+1}^{+\infty} \sin^2\left( \frac{\pi x}{2t} \right) \d t$. Trouver d'abord la limite, puis un équivalent de $f$ en $+\infty$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item Soit $N\in\N$. Pour $x\in[N,N+1[$, on a $f(x)=\sum_{N+1}^{+\infty}\sin^2\pfrac{\pi x}{2n}$. On a alors l'inégalité
+\begin{equation*}
+    \sin^2\pfrac{\pi x}{2n}\leq \frac{\pi^2 x^2}{4n^2}\leq \frac{\pi^2 (N+1)^2}{4n^2}
+\end{equation*}
+qui montre que la série converge normalement sur $[N,N+1[$ (et d'ailleurs aussi sur $[N,N+1]$). On en déduit que $f$ est continue sur chacun des intervalles $[N,N+1[$. Ceci montre que $f$ est continue en tout point de $\R\setminus\N$ et continue à droite en tout point de $\N$. On a donc
+\begin{equation*}
+    \lim_{t\tor N} f(t)=f(N)=\sum_{N+1}^{+\infty}\sin^2\pfrac{\pi N}{2n}.
+\end{equation*}
+Mais on a remarqué la convergence normale de la série $\sum_{n\geq N}\sin^2\pfrac{\pi x}{2n}$ sur $[N-1,N]$. On en déduit que
+\begin{equation*}
+    \lim_{t\tol N} f(t)=\sum_{n=N}^{+\infty}\sin^2\pfrac{\pi N}{2n} =\sin^2\pfrac{\pi N}{2N} + f(N)=1+f(N).
+\end{equation*}
+On a donc
+\begin{equation*}
+    \boxed{ \lim_{t\tor N} f(t) - \lim_{t\tol N} f(t) = -1.}
+\end{equation*}
+\item Si $n\geq E(x)+1$, $t\mapsto\sin^2\frac{\pi x}{2t}$ est décroissante sur $[n,n+1]$. On a donc dans ce cas
+\begin{equation*}
+    \sin^2\frac{\pi x}{2n} \geq \int_n^{n+1}\sin^2\frac{\pi x}{2t}\d t
+\end{equation*}
+et donc
+\begin{equation*}
+    f(x)\geq \int_{E(x)+1}^{+\infty}\sin^2\frac{\pi x}{2t}\d t \underset{u=\frac{\pi x}{2t}}= \frac{\pi x}2 \int_0^{\frac{\pi x}{2(E(x)-1)}} \frac{\sin^2 u}{u^2}\d u.
+\end{equation*}
+Cette dernière expression est équivalente, quand $x$ tend vers $+\infty$ à
+\begin{equation*}
+    \frac{\pi x}{2}\int_0^{\pi/2} \frac{\sin^2 u}{u^2}\d u.
+\end{equation*}
+Toujours en utilisant la décroissance de $t\mapsto \sin^2\frac{\pi x}{2t}$ sur $[n,n+1]$, on a aussi
+\begin{gather*}
+\sin^2\frac{\pi x}{2n}\leq\int_{n-1}^n\sin^2\frac{\pi x}{2t}\d t
+\shortintertext{d'où}
+f(x)\leq\int_{E(x)}^{+\infty}\sin^2\frac{\pi x}{2t}\d t
+\end{gather*}
+qui est également équivalente, quand $x$ tend vers $+\infty$ à la même expression. On a donc
+\begin{equation*}
+    \boxed{f(x)\sim \frac{\pi x}{2}\int_0^{\pi/2} \frac{\sin^2 u}{u^2}\d u.}
+\end{equation*}
+
+\end{enumerate}
+\end{solution}
+\end{enonce}

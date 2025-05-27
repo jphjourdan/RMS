@@ -1,0 +1,38 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS121/2 E547, Mines-Ponts PSI},subtitle={},tags={}]
+Soient $(a,b)\in\R^2$ et 
+$A=\begin{pmatrix}
+a^2& ab  & ab  & b^2\\
+ab & a^2 & b^2 & ab\\
+ab & b^2 & a^2 & ab\\
+b^2& ab  & ab  & a^2
+\end{pmatrix}$.
+\begin{enumerate}
+\item Calculer le déterminant de $A$ et son polynôme caractéristique.
+\item La matrice $A$ est-elle diagonalisable ?
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item Le calcul est assez naturel. Une solution parmi tant d'autres :
+    \begin{itemize}
+        \item $C_4\gets C_4+C_1+C_2+C_3$ et mettre $((a+b)^2-X)$ en facteur dans $C_4$.
+        \item $L_3\gets L_3-L_2$ et $L_4\gets L_4-L_1$ et mettre $(a^2-b^2-X)$ dans chacune des lignes $L_3$ et $L_4$.
+        \item Finir le calcul brutalement, par exemple, développer par rapport à $L_4$ puis par rapport à $L_3$. On obtient $a^2+b^2-X-2ab$.
+    \end{itemize}    
+Finalement
+\begin{equation*}
+    \boxed{ \chi_A= \left( (a+b)^2-X \right) \left( a^2-b^2-X \right)^2 \left( (a-b)^2-X \right).}
+\end{equation*}
+\item $A$ est diagonalisable car elle est symétrique.
+On peut néanmoins préciser et trouver facilement une base de vecteurs propres
+\begin{equation*}
+e_1=(1,1,1,1)^T,\quad
+e_2=(1,0,0,-1)^T.\quad
+e_3=(0,1,-1,0)^T,\quad
+e_4=(1,-1,-1,1)^T.
+\end{equation*}
+Ce qui montre que toutes les matrices de la forme donnée sont co-diagonalisable.
+\end{enumerate}
+\end{solution}
+\end{enonce}

@@ -1,0 +1,64 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS120 E225, X-MP 2009},subtitle={},tags={}]
+%%% Changement de notations car fonction e <-> exp...
+Soit $E$ (resp. $F$) l'espace (resp. l'espace affine) des fonctions de classe $\CC^2$ de $[0,1]$ dans $\R$ telles que $f(0)=f(1)=0$ (resp. $f(0)=0, f(1)=1$).
+Pour $f\in F$, soit
+\begin{equation*}
+I(f) = \int_0^1 e^t(f(t)^2+f'(t)^2)\d t.
+\end{equation*}
+\begin{enumerate}
+\item Soient $f$ dans $F$, $h$ dans $E$. Calculer la dérivée en $t=0$ de $t\mapsto I(f+th)$.
+\item Montrer que $I$ atteint un minimum sur $F$ et le déterminer.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item  Notons que $I(f)$ est une forme quadratique sur l'espace des fonction $\CC^2$ de forme polaire
+\begin{equation*}
+\phi : (f,g)\mapsto \int_0^1 e^t \left(f(t)g(t)+f'(t)g'(t)\right) \d t.
+\end{equation*}
+En développant $I(f+th)$, on obtient
+\begin{equation*}
+    I(f+th)=I(f)+2t\phi(f,h)+t^2 I(h)
+\end{equation*}
+de sorte que la dérivée en $t=0$ de $t\mapsto I(f+th)$ est
+\begin{equation*}
+    2\phi(f,h)=2\int_0^1 e^t \left( f(t)h(t) + f'(t)h'(t) \right) h'(t)\d t.
+\end{equation*}
+\item Le fait que pour $f\in F$, $h\in H$, on a
+\begin{align*}
+\int_0^1 e^t \left(  f(t)h(t) + f'(t)h'(t) \right) h'(t)\d t
+&= \int_0^1 e^t f(t)h(t)\d t + \left[ e^t f'(t)h(t)\right]_0^1 - \int_0^1 e^t\left( f'(t)+f''(t) \right) h(t)\d t\\
+&= \int_0^1 e^t \left(f(t)-f'(t)-f''(t)\right) h(t) \d t,
+\end{align*}
+nous amène à considérer le problème aux limites
+\begin{equation}
+    y''=y-y' \et y(0)=0, y(1)=1.
+\end{equation}
+Les racines de l'équation caractéristique sont
+\begin{equation*}
+    r=\frac{-1-\sqrt5}2 \et s=\frac{-1+\sqrt5}2
+\end{equation*}
+donc la solution générale de $y''+y'-y=0$ est $x\mapsto ae^{rx}+be^{sx}$. On en déduit que le problème aux limites ci-dessus admet l'unique solution $f_0$ définie par
+\begin{equation*}
+f_0(x)
+    =\frac{e^{1/2}}{2\sinh\left( \frac{\sqrt5}2 \right) }
+    \left(
+        \exp\left( \frac{-1+\sqrt5}2 x \right) 
+        -\exp\left( \frac{-1-\sqrt5}2 x \right) 
+    \right) 
+    =\frac{\exp\left(\frac{1-x}2\right)\sinh\left( \frac{\sqrt5}2x \right)}
+        {\sinh\left( \frac{\sqrt5}2 \right) }.
+\end{equation*}
+Cette fonction est dans $F$ et, de plus, elle réalise le minimum de $I$ sur $F$ car, pour tout $f\in F$, $u=f-f_0$ est dans $E$ et donc
+\begin{equation*}
+I(f)=I(f_0+u)=I(f_0)+I(u) \geq I(f_0).
+\end{equation*}
+Il en résulte que le minimum de $I$ sur $F$ est
+\begin{equation*}
+\frac e2\left( \sqrt5\cotanh\left( \frac{\sqrt5}2 \right) -1\right) =2,4073\dots
+\end{equation*}
+et qu'en outre il est atteint en l'unique élément $f_0$.
+\end{enumerate}
+\end{solution}
+\end{enonce}

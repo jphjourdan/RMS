@@ -1,0 +1,44 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS 116 E808, Centrale MP 2005},subtitle={},tags={}]
+Soit $f:\R\to\R$, $2\pi$-périodique, paire et telle que
+\begin{equation*}
+  \forall x\in[0,\pi], f(x)=\sqrt{x}.
+\end{equation*}
+\begin{enumerate}
+  \item déterminer les coefficients de Fourier de $f$ en fonction de $F(x)=\int_0^x\sin\left( t^2 \right)\d t$.
+  \item Quelle est la nature de la série de Fourier de $f$~?
+    Quelle est la somme de cette série~?
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+    \item $b_n(f)=0$, $a_0(f)=4\sqrt\pi/3$.
+      IPP + $u=\sqrt{nt}$, $a_n(f)=-\frac{2}{n\sqrt n\pi}F(\sqrt{n\pi})$.
+    \item Changement de var $u=t^2$ + IPP :
+      \begin{equation*}
+        F(x)-F(1)
+        =\left[-\frac{\cos(u)}{2\sqrt u}\right]_1^{x^2} - \int_1^{x^2}\frac{\cos(u)}{4u\sqrt u}\d u
+        =\frac{\cos(1)}2-\frac{\cos(x^2)}{2x}-\frac14\int_1^{x^2}\frac{\cos(u)}{u\sqrt u}\d u.
+      \end{equation*}
+      Comme $\cos(u)/u\sqrt u$ est intégrable sur $[1,+\infty[$, $F(x)$ admet une limite que $x\to+\infty$....
+      \begin{equation*}
+        a_n(f)=-\frac2{n\sqrt n\pi}F\left( \sqrt{n\pi} \right) = O\left( \frac{1}{n\sqrt n} \right).
+      \end{equation*}
+      Donc $\sum a_n(f)$ CV absolument et la série de Fourier de $f$ CV normalement.
+
+      Notons $g$ la somme de cette série.
+      Alors $g$ est continue, $2\pi$-périodique et paire sur $\R$, donc
+      $b_n(g)=0=b_n(f)$.
+      De plus, il y  a CN, on peut intervertir sommation et intégration, ce qui prouve
+      \begin{align*}
+      a_n(g)
+      &= \frac2\pi\int_0^\pi g(t)\cos(nt)\d t
+      =\frac2\pi\int_0^\pi\left( \frac{a_0(f)}2 + \sum_{k=1}^{+\infty}a_k(f)\cos(kt) \right)\cos(nt)\d t\\
+      &= \frac{a_0(f)}2\frac2\pi\int_0^\pi\cos(nt)\d t + \sum_{k=1}^{+\infty} a_k(f)\frac2\pi\int_0^\pi\cos(kt)\cos(nt)\d t = a_n(f).
+      \end{align*}
+      $c_n(f-g)=0$. Or d'après Parseval..... $\norm*{f-g}_2=0$ et $f-g$ est continue d'où : $\forall t\in[-\pi,\pi], f(t)=g(t)$, puis par $2\pi$-périodicité $f=g$.
+
+      \noindent\emph{Conclusion : } $f$ est somme sur $\R$ de sa série de Fourier.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

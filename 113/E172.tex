@@ -1,0 +1,90 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS 113/4 E172},subtitle={Mines-Ponts},tags={},difficulty={}]
+%%% 2002
+Soient $A\in\mat_n(\C)$ diagonalisable et $P\in\C[X]$ avec $\deg P\geq 1$.
+\begin{enumerate}
+\item Montrer qu'il existe $M\in\mat_n(\C)$ telle que $A=P(M)$.
+\item On suppose de plus que les valeurs propres de $A$ sont simples.
+    
+    Trouver toutes les matrices $M\in\mat_n(\C)$ telle que $A=P(M)$.
+\item Soit $M\in\mat_n(\C)$ dont toutes les valeurs propres sont simples. On suppose que $A$ et $M$ sont co-diagonalisables. 
+    
+    Établir l'existence de $Q\in\C[X]$ tel que $A=Q(M)$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item Commençons par noter que la fonction $z\mapsto P(z)$ est surjective de $\mathbb{C}$ dans $\mathbb{C}$.
+  En effet, le théorème de d'Alembert-Gauß assure que pour $w\in\mathbb{C}$, le polynôme $P(X)-w$ a au moins une racine dans $\mathbb{C}$.
+
+La matrice $A$ est diagonalisable, il existe donc $\Omega\in\gl_n(\mathbb{C})$ telle que
+\begin{equation*}
+    \Omega^{-1} A\Omega = \diag(\alpha_1,\dots,\alpha_n)=
+\begin{pmatrix}
+    \alpha_1 &&\gros 0\\
+     &\ddots &\\
+    \gros 0&&\alpha_n
+\end{pmatrix}.
+\end{equation*}
+Choisissons pour chaque $k$, $w_k$ tel que $P(w_k)=\alpha_k$. Alors
+\begin{gather*}
+M
+=
+\Omega 
+\begin{pmatrix}
+    w_1 &&\gros 0\\
+     &\ddots &\\
+    \gros 0&& w_n
+\end{pmatrix}
+\Omega^{-1}
+\shortintertext{vérifie}
+P(M)
+=
+\Omega
+\begin{pmatrix}
+    P(w_1) &&\gros 0\\
+     &\ddots &\\
+     \gros 0&& P(w_n)
+\end{pmatrix}
+\Omega^{-1}
+=
+A.
+\end{gather*}
+\item
+Supposons $\alpha_1,\dots,\alpha_n$ deux à deux distincts.
+Si $A=P(M)$, $M$ commute à $A$. Les sous-espaces propres de $A$, qui sont des droites, sont stables par $M$. Par conséquent, $M$ est nécessairement diagonalisable dans la même base  que $A$ et
+\begin{equation*}
+\Omega^{-1} M\Omega
+=
+\begin{pmatrix}
+    w_1 &&\gros 0\\
+     &\ddots &\\
+    \gros 0&& w_n
+\end{pmatrix}
+\end{equation*}
+où, pour chaque $k$, $P(w_k)=\alpha_k$. Il y a un nombre fini de solutions, au plus $N^n$, où $N=\deg P$.
+\item
+Supposons qu'il existe $\Omega\in\gl_n(\mathbb{C})$ telle que
+\begin{align*}
+\Omega^{-1}M\Omega&=
+\begin{pmatrix}
+    w_1 &&\gros 0\\
+     &\ddots &\\
+    \gros 0&& w_n
+\end{pmatrix}
+&\text{où $w_1,\dots,w_n$ sont distincts,}\\
+\Omega^{-1}A\Omega&=
+\begin{pmatrix}
+    \alpha_1 &&\gros 0\\
+     &\ddots &\\
+    \gros 0&& \alpha_n
+\end{pmatrix}
+&\text{où $\alpha_1,\dots,\alpha_n$ sont quelconques.}
+\end{align*}
+Il existe un polynôme $Q$ de degré $\leq n-1$, tel que pour tout $k$, $Q(w_k)=\alpha_k$.
+C'est le polynôme d'interpolation de Lagrange. Ce polynôme vérifie $Q(M)=A$.
+
+Tous les polynômes congrus à $Q$ modulo le polynôme minimal de $M$, c'est-à-dire $\prod(X-w_i)$, répondent à la question.
+\end{enumerate}
+\end{solution}
+\end{enonce}

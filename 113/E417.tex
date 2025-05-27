@@ -1,0 +1,32 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS113/4 E417 CCP},subtitle={},tags={}]
+Soit $E$ un espace vectoriel de dimension finie.
+Soient $f$ et $g$ deux endomorphismes de $E$.
+
+On suppose que $E=\im f+\im g=\ker f+\ker g$.
+Montrer que ces sommes sont directes.
+\end{exercise}
+\begin{solution}
+D'après le théorème du rang appliqué à $f$ et $g$, on a
+\begin{align*}
+\dim E
+&=\dim \ker f+\dim \im f\\
+&=\dim \ker g+\dim \im g.
+\end{align*}
+D'après les hypothèses, on a
+\begin{align*}
+\dim E
+&= \dim \im f+\dim \im g -\dim(\im f\cap\im g)\\
+&= \dim \ker f+\dim \ker g -\dim(\ker f\cap\ker g).
+\end{align*}
+En additionnant les deux première formules de $\dim E$ et en soustrayant les deux dernières, on obtient
+\begin{equation*}
+    \dim (\im f\cap\im g)+\dim(\ker f\cap\ker g)=0.
+\end{equation*}
+On conclut aisément que $\dim (\im f\cap\im g)=\dim(\ker f\cap\ker g)=0$, d'où
+\begin{equation*}
+    E=\im f\oplus\im g=\ker f\oplus\ker g.
+\end{equation*}
+%%% Rq en dim infinie....
+\end{solution}
+\end{enonce}

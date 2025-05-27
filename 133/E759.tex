@@ -1,0 +1,62 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS133 E759},subtitle={Mines-Ponts PSI 2022},tags={},difficulty={}]
+  Notons, pour $n\in\N*$, $D_n$ le nombre de permutations de $\ito{n}$ sans point fixe et $p_n$ la probabilité qu'une permutation de $\ito{n}$ choisie au hasard soit sans point fixe.
+  Par convention, $p_0=1$.
+
+  \begin{enumerate}
+    \item Montrer que, pour $n\in\N$,
+      \begin{equation*}
+        \sum_{k=0}^n \frac{p_k}{(n-k)!} = 1.
+      \end{equation*}
+
+    \item En déduire que, pour $x\in]-1,1[$,
+      \begin{equation*}
+        \sum_{n=0}^{+\infty} p_n x^n = \frac{e^{-x}}{1-x}.
+      \end{equation*}
+
+    \item Montrer que $p_n \xto[n\to+\infty]{} 1/e$.
+  \end{enumerate}
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+    \item Il y a $\binom nk D_k$ permutation avec exactement $k$ points fixes, donc
+      \begin{equation*}
+        \sum_{k=0}^n \binom{n}{k} D_k 
+        = \sum_{k=0}^n \frac{n!}{(n-k)!} \frac{D_k}{k!}
+        = \sum_{k=0}^n \frac{n!}{(n-k)!} p_k
+        = n!.
+      \end{equation*}
+      D'où le résultat après simplification par $n!$.
+
+
+    \item On a (après justification des convergence),
+      \begin{equation*}
+        \sum_{n=0}^{+\infty} x^n
+        =
+        \sum_{n=0}^{+\infty} \sum_{k=0}^n \frac{x^{n-k}}{(n-k)!} p_k x^k
+        =
+        \sum_{n=0}^{+\infty} \frac{x^{n}}{n!}  \sum_{n=0}^{+\infty} p_n x^n.
+      \end{equation*}
+      On a donc
+      \begin{equation*}
+        \frac{1}{1-x}
+        =
+        e^x  \sum_{n=0}^{+\infty} p_n x^n.
+      \end{equation*}
+
+    \item On a alors
+    \begin{equation*}
+        \sum_{n=0}^{+\infty} p_n x^n.
+        = \frac{e^{-x}}{1-x}
+        = \sum_{n=0}^{\infty} \frac{(-1)^n x^n}{n!} \sum_{n=0}^{\infty} x^n
+        = \sum_{n=0}^{\infty} \sum_{k=0}^{n} \frac{(-1)^k}{k!}x^k x^{n-k}
+        = \sum_{n=0}^{\infty} \left(\sum_{k=0}^{n} \frac{(-1)^k}{k!}\right) x^{n}.
+      \end{equation*}
+      D'où (unicité des coefficients),
+      \begin{equation*}
+        p_n = \sum_{k=0}^{n} \frac{(-1)^k}{k!} \xto[n\to+\infty]{} e^{-1}.
+      \end{equation*}
+
+  \end{enumerate}
+\end{solution}
+\end{enonce}

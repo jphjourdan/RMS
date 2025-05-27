@@ -1,0 +1,24 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS135 E1331},subtitle={Centrale PSI 2024},tags={oraux},difficulty={}]
+Un robot appuie sur une diode verte ou rouge à tout instant $n\in\N$.
+  Lorsqu'il appuie sur la diode rouge à l'instant $n$, il appuie sur la diode verte à l'instant $n+1$ avec une probabilité $p\in]0,1[$, ou sur la diode rouge avec probabilité $1-p$.
+  Lorsqu'il appuie sur la diode verte à l'instant $n$, il appuie sur la diode rouge à l'instant $n+1$ avec une probabilité $q\in]0,1[$, ou sur la diode verte avec probabilité $1-q$.
+  On note $r_n$ la probabilité que le robot appuie sur la diode rouge à l'instant $n$, $v_n$ la probabilité que le robot appuie sur la diode verte à l'instant $n$.
+
+  \begin{enumerate}
+    \item Montrer qu'il existe $A\in\mat_2(\R)$ telle que
+      \begin{equation*}
+        \forall n\in\N, \begin{pmatrix} r_{n+1}\\ v_{n+1} \end{pmatrix} = A \begin{pmatrix} r_n \\ v_n \end{pmatrix}.
+      \end{equation*}
+
+    \item Déterminer $B, C\in\mat_2(\R)$ telles que $B+C=I_2$ et $A = B + (1-p-q) C$.
+
+    \item En déduire une expression de $A^n$.
+
+    \item Déterminer $\lim\limits_{n\to+\infty} r_n$ et $\lim\limits_{n\to+\infty} v_n$.
+      Commenter.
+  \end{enumerate}
+\end{exercise}
+\begin{solution}
+\end{solution}
+\end{enonce}

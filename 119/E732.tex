@@ -1,0 +1,23 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS119 E732 MinesPont PC 2008},subtitle={},tags={}]
+Trouver les $f\in\CC^0(\R,\R)$ telles que
+\begin{equation*}
+\forall (x,y)\in\R^2, f(x)\times f(y)=\int_{x-y}^{x+y} f(t)\d t.
+\end{equation*}
+\end{exercise}
+\begin{solution}
+%%%oraux XENS ana2 1.49.
+$f'(x)f(y)=f(x+y)-f(x-y)$ et $f(x)f'(y)=f(x+y)+f(x-y)$.
+
+En additionnant $f'(x)f(y)+f(x)f'(y)=2f(x+y)$.
+
+En dérivant de nouveau par rapport à $x$ et $y$ :
+\begin{equation*}
+  2f'(x+y)=f''(x)f(y)+f'(x)f'(y)=f'(x)f'(y)+f(x)f''(y).
+\end{equation*}
+et donc, pour tout $(x,y)\in\R^2$,
+\begin{equation*}
+  f''(x)f(y)=f(x)f''(y).
+\end{equation*}
+\end{solution}
+\end{enonce}

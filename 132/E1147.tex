@@ -1,0 +1,39 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS132 E1147},subtitle={Oral CCINP PSI 2021},tags={mpsi},difficulty{}]
+  Soient $E$ un espace euclidien de dimension $n$, $\left( e_1,\dots,e_n \right)$ une base orthonormée de $E$ et $\left( x_1,\dots,x_n \right)$ une famille de vecteurs de $E$ telle que
+  \begin{equation*}
+    \sum_{k=1}^n \norm*{x_k}^2 < 1.
+  \end{equation*}
+  \begin{enumerate}
+    \item Montrer que, pour tous $\lambda_1,\dots, \lambda_n \in\R$,
+      \begin{equation*}
+        \norm*{\sum_{k=1}^n \lambda_k x_k}^2
+        \leq
+        \left( \sum_{k=1}^n \lambda_k^2 \right) \left( \sum_{k=1}^n \norm*{x_k}^2 \right).
+      \end{equation*}
+
+    \item En déduire que la famille $\left( e_1+x_1, \dots, e_n + x_n \right)$ est une base de $E$.
+  \end{enumerate}
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+    \item Cauchy-Schwarz dans $\R^n$.
+
+    \item Si $\sum_{k=0}^n \lambda_k (e_k + x_k) = 0$, alors
+      \begin{equation*}
+        \norm*{\sum_{k=0}^n \lambda_k e_k} = \norm*{\sum_{k=0}^n \lambda_k x_k}.
+      \end{equation*}
+      La base $(e_1,\dots,e_n)$ étant orthonormée, en passant au carré et en utilisant la première question, on obtient
+      \begin{equation*}
+        \sum_{k=0}^n \lambda_k^2 
+        \leq
+        \left( \sum_{k=1}^n \lambda_k^2 \right) \left( \sum_{k=1}^n \norm*{x_k}^2 \right).
+      \end{equation*}
+      D'où
+      \begin{equation*}
+        \underbrace{\left(1-\sum_{k=1}^n\norm*{x_k}^2\right)}_{>0} \underbrace{\left(\sum_{k=0}^n \lambda_k^2\right)}_{\geq 0} \leq 0.
+      \end{equation*}
+      Nécessairement, $\sum_{k=1}^n \lambda_k^2 = 0$ puis chaque $\lambda_k$ est nul.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

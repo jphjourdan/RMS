@@ -1,0 +1,42 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS 122 E250},subtitle={},tags={}]
+Soient $E$ et $F$ deux espaces vectoriels de dimension finie.
+\begin{enumerate}
+  \item
+	Soient $u\in\lin(E,F)$ et $v\in\lin(F,E)$ tels que $v\circ u\circ v=v$ et $u\circ v\circ u=u$. Montrer
+	\begin{align*}
+	  \ker u&= \ker(v\circ u)&
+	  &\et&
+	  \im v&=\im(v\circ u).
+	\end{align*}
+	Montrer $E=\ker u\oplus\im v$.
+
+  \item
+	Soient $u\in\lin(E,F)$, $E_1$ un supplémentaire de $\ker u$ dans $E$ et $F$ un supplémentaire de $\im u$ dans $F$. Soit $w\in\lin(E_1,\im u)$ tel que
+	\begin{equation*}
+	  \forall x\in E_1, w(x)=u(x).
+	\end{equation*}
+	\begin{enumerate}
+	  \item Montrer que $w$ est un isomorphisme.\\
+		Soit $v\in\lin(F,E)$ défini par
+		\begin{equation*}
+		  \begin{cases}
+			v(y)=w^{-1}(y) & \text{ si } y\in\im u\\
+			v(y)=0 & \text{ si } y\in F_1.
+		  \end{cases}
+		\end{equation*}
+	  \item \label{37442245}
+		Montrer $E_1=\im v$ et $F_1=\ker v$. Montrer
+		\begin{align*}
+		  v\circ u\circ v&=v&
+		  &\et&
+		  u\circ v\circ u&= u.
+		\end{align*}
+	  \item 
+		Montrer que $v$ est l'unique élément de $\lin(E,F)$ vérifiant les conditions de \ref{37442245}.
+	\end{enumerate}
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\end{solution}
+\end{enonce}

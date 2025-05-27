@@ -1,0 +1,27 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1617},subtitle={Oral CCINP PC 2023},tags={mpsi},difficulty={}]
+  Pour $n\in\N*$, soit
+\begin{equation*}
+  \Delta_n = 
+  \begin{vmatrix}
+    3 & 1 & 0 & \cdots & \cdots & 0\\
+    2 & 3 & 1 & \ddots &  & \vdots\\
+    0 & 2 & 3 & 1 & \ddots & \vdots\\
+    \vdots & \ddots &\ddots & \ddots & \ddots & 0\\
+    \vdots & & \ddots & 2 & 3 & 1\\
+    0 & \cdots & \cdots & 0 & 2 & 3\\
+  \end{vmatrix}
+  \quad
+  \text{(matrice tridiagonale de $\mat_n(\R)$).}
+\end{equation*}
+\begin{enumerate}
+  \item Trouver une relation de récurrence vérifiée par la suite $(\Delta_n)$.
+  \item En déduire une expression de $\Delta_n$ en fonction de $n$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+  \begin{itemize}
+    \item Relation $\Delta_n = 3 \Delta{n-1} - 2 \Delta_{n-2}$.
+  \end{itemize}
+\end{solution}
+\end{enonce}

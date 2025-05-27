@@ -1,0 +1,31 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS121/1119 CCP PC},subtitle={},tags={mpsi}]
+Soit $u:\R_n[X]\to\R_n[X], P\mapsto P(-4)X+P(6)$.
+
+Déterminer le noyau, l'image, les valeurs propres et les espaces propres de $u$.
+\end{exercise}
+\begin{solution}
+Soit $P\in\R_n[X]$.
+\begin{equation*}
+P\in\ker u
+\iff P(-4)X+P(6)=0
+\iff P(-4)=0 \et P(6)=0
+\iff (X+4)(X-6) \divise P
+\iff \exists Q\in\R_{n-2}[X], P=(X+4)(X-6)Q.
+\end{equation*}
+Observons que $\ker u$ a pour dimension $n-2$. Clairement $\im u\subset \R_1[X]$, le théorème du rang assure $\dim\im u=2$, d'où $\im u=\R_1[X]$. On peut également utiliser $u(X-6)=-10X$, $u(X+4)=10$ qui montre $\R_1[X]\subset\im u$.
+
+Si $P$ est un vecteur propre associé à une valeur propre non nulle, alors $P\in\im u=\R_1[X]$. Supposons pour le moment $n=2$, alors la matrice de $u$ relativement à la base canonique de $\R_1[X]$ est
+$M=\begin{pmatrix} 1& 6\\ 1&-4 \end{pmatrix}$.
+Son polynôme caractéristique est $X^2+3X-10$ et ses valeurs propres sont $-5$ et $2$.
+On trouve pour espace propre deux droites vectorielles engendrées respectivement par $X-1$ et $X+6$.
+
+Revenons au cas général. 
+Remarquons qu'un vecteur propre de $u|_{\R_1[X]}$ est également vecteur propre de $u$. Finalement, les espaces propres de $u$ sont
+\begin{equation*}
+    E_0=\ker u= (X+4)(X-6)\R_{n-2}[X],\quad
+    E_{-5}=\vect\set{X-1},\quad
+    E_{2}=\vect\set{X+6}.
+\end{equation*}
+\end{solution}
+\end{enonce}

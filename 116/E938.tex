@@ -1,0 +1,91 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS 116-4 E938, Centrale PC 2005},subtitle={},tags={}]
+Soit $\left( E,\PS{*}{*} \right)$ un espace euclidien de dimension $n\in\N*$.
+\begin{enumerate}
+\item 
+  Montrer que pour toute base $\bm e=\left( e_1,\dotsc,e_n \right)$ de $E$, il existe une unique base $\bm f=\left( f_1,\dotsc,f_n \right)$ de $E$ telle que
+  \begin{equation}
+    \forall x\in E, x=\sum_{i=1}^n \PS{e_i}{x} f_i.
+  \end{equation}
+\item Montrer que $(A,B)\mapsto \tr\left( \transp AB \right)$ définit un produit scalaire sur $\mat_n(\R)$.
+\item Montrer que pour toute base $\left( G_i \right)$ de $\mat_n(\R)$ il existe une base $(H_i)$ telle que
+  \begin{equation}
+    \forall A\in\mat_n(\R), A= \sum_{i=1}^{n^2} \tr\left( A G_i \right) H_i.
+  \end{equation}
+\item
+  Soit $G$ un sous-groupe de $\gl_n(\R)$ qui engendre l'espace vectoriel  $\mat_n(\R)$ et dont tous les éléments ont leurs valeurs propres complexes de module majoré par $1$.\\
+  Montrer que $G$ est borné pour toute norme de $\mat_n(\R)$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item 
+  Considérons $\phi:E\to\R^n, x\mapsto\left( \PS{e_1}x,\dotsc,\PS{e_n}x \right)$.
+  Alors $\phi$ est linéaire par linéarité à droite du produit scalaire.
+  Si $x\in\ker\phi$, c'est-à-dire 
+  \begin{equation*}
+    \forall i\in\ito n, \PS{e_i}x=0,
+  \end{equation*}
+  alors $x$ est orthogonal à toute combinaison linéaire de $e_1,\dotsc,e_n$, donc puisque $\bm e$ est génératrice, $x\in E^\perp=\Set{0}$.
+  Ainsi $\phi$ est injective.
+  Comme $\dim(E)=n=\dim(\R^n)$, $\phi$ est un isomorphisme de $\R$-espaces vectoriels.
+
+  En particulier, $\bm\epsilon=\left( \epsilon_1,\dotsc,\epsilon_n \right)$ désignant la base canonique de $\R^n$, il existe pour chaque $j\in\ito n$, $f_j\in E$ tel que $\phi(f_j)=\epsilon_j$ soit tel que, pour tout $i\in\ito n$, $\PS{e_i}{f_j}=\delta_{i,j}$.
+
+  Puisque $\phi$ est un isomorphisme et $\bm \epsilon$ une base de $\R^n$, $\bm f=\left( f_1,\dotsc,f_n \right)$ est une base de $E$.
+
+Enfin, soit $x\in E$.
+Il existe $\left( \alpha_1,\dotsc,\alpha_n \right)\in\R^n$ tel que $x=\sum_{i=1}^n \alpha_i f_i$. On a
+\begin{equation*}
+  \left( \PS{e_1}x,\dotsc,\PS{e_n}x \right)
+  = \phi(x)
+  = \phi\left( \sum_{i=1}^n \alpha_if_i \right)
+  =\sum_{i=1}^n \alpha_i\phi(f_i)
+  =\sum_{i=1}^n \alpha_i \epsilon_i
+  =\left( \alpha_1,\dotsc,\dotsc \alpha_n \right).
+\end{equation*}
+Ainsi $x=\sum_{i=1}^{n}\PS{e_i}x f_i$.
+\item Classique.
+\item L'application $A\mapsto\transp A$ de $\mat_n(\R)$ dans lui-même est clairement un automorphisme (involutif) de $\R$-espace vectoriel.
+  Donc comme $=\left( G_i \right)_{1\leq i\leq n^2}$ est une base de $\mat_n(\R)$, $\left( \transp G_i \right)_{1\leq i\leq n^2}$ est une base de $\mat_n(\R)$.
+  On applique la première question à cette base, $\mat_n(\R)$ étant muni du produit scalaire de la question précédente. Il vient : il existe une base $\left( H_i \right)$ telle que
+  \begin{equation*}
+    \forall A\in\mat_n(\R),
+    A
+    =\sum_{i=1}^{n^2} \PS{\transp G_i}{A} H_i
+    =\sum_{i=1}^{n^2} \tr\left( G_i A\right)  H_i
+    =\sum_{i=1}^{n^2} \tr\left( A G_i\right)  H_i.
+  \end{equation*}
+
+\item Comme le sous-groupe $G$ engendre $\mat_n(\R)$, il existe une base $\left( G_i \right)_{1\leq i\leq n^2}$ de $\mat_n(\R)$ constituée d'éléments de $G$.
+  On lui applique la question précédente, obtenant une base $\left( H_i \right)$ de $\mat_n(\R)$ telle que
+\begin{equation*}
+    \forall A\in\mat_n(\R),
+    A
+    =\sum_{i=1}^{n^2} \tr\left( A G_i\right)  H_i.
+  \end{equation*}
+Soit $M\in G$. Notons $\lambda_1,\dotsc,\lambda_n$ la liste des valeurs propres complexes de $M$, chacune répétée un nombre de fois égal à sa multiplicité.
+Le polynôme caractéristique de $M$ est
+\begin{equation*}
+  \Xi_M(X)=\det(M-XI_n) = (-1)^n\prod_{p=1}^n (X-\lambda_p).
+\end{equation*}
+Il est scindé sur $\mathbb{C}$, donc $M$ est trigonalisable dans $\mat_n(\C)$, et il existe $P\in\gl_n(\C)$ et une matrice triangulaire $T\in\mat_n(\C)$ ayant pour diagonale $(\lambda_1,\dotsc,\lambda_n)$ telles que $M=P T P^{-1}$.
+On a donc $\tr(M)=\tr(T)=\sum_{k=1}^n \lambda_k$.
+Donc, comme tous les éléments de $G$ ont leurs valeur propre complexes majoré par $1$,
+\begin{equation*}
+  \abs*{\tr(M)}\leq\sum_{k=1}^n \abs*{\lambda_k}\leq n.
+\end{equation*}
+Ainsi : $\forall M\in G, \abs{\tr(M)}\leq n$.
+
+Soit $\norm{*}$ une norme sur $\mat_n(\R)$. Alors
+\begin{equation*}
+  \forall A\in G,
+  \norm*{A}
+  =\norm*{\sum_{i=1}^{n^2}\tr(AG_i) H_i}
+  \leq \sum_{i=1}^{n^2} \abs*{\tr(AG_i)}\norm*{H_i}
+  \leq\sum_{i=1}^{n^2} n\norm*{H_i}.
+\end{equation*}
+Par conséquent : $G$ est borné pour la norme considérée.
+\end{enumerate}
+\end{solution}
+\end{enonce}

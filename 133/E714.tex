@@ -1,0 +1,60 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS133 E714},subtitle={Mines-Ponts PSI 2022},tags={},difficulty={}]
+  \begin{enumerate}
+    \item Étudier la convergence et calculer la somme éventuelle de la série de terme général $u_n$ définie par
+      \begin{equation*}
+        u_0 = 1 \et \forall n\in\N, u_{n+1} = \ln\left( e^{u_n} - u_n \right).
+      \end{equation*}
+
+    \item Étudier la convergence et calculer la somme éventuelle de la série de terme général $v_n$ définie par
+      \begin{equation*}
+        v_0 \in\R \et \forall n\in\N, v_{n+1} = e^{v_n} - 1.
+      \end{equation*}
+  \end{enumerate}
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+    \item Grace à l'inégalité $e^x \geq x+1 > x$, on voit que la suite $(u_n)$ est bien définie, et par récurrence que $u_n > 0$, pour tout $n$.
+      On a aussi
+      \begin{equation*}
+        e^{u_{n+1}} - e^{u_n} = -u_n < 0.
+      \end{equation*}
+      La suite $u$ est donc décroissante; elle est minorée par $0$ et donc converge.
+      Par passage à la limite dans l'égalité supra, cette limite est nulle.
+      En outre,
+      \begin{equation*}
+        \sum_{k=0}^{n} u_k 
+        = \sum_{k=0}^{n} \left( e^{u_k} - e^{u_{k+}} \right) 
+        = e^{u_0} - e^{u_{n+1}}
+        \xto{} e - 1.
+      \end{equation*}
+
+      \item 
+      On va traiter trois cos:
+      \begin{itemize}
+        \item Si $v_0=0$, alors $v_n = 0$ pour tout $n$...
+
+        \item Si $v_0>0$, la suite $(v_n)$ est croissante et ne peut converger vers $0$ : la série diverge grossièrement.
+
+        \item Si $v_0<0$, la suit $(v_n)$ est croissante et converge vers $0$ (...).
+          De plus, 
+          \begin{equation*}
+            v_{n+1} = e^{v_n} - 1 = v_n  + \frac12 v_n^2 + o(v_n^2),
+          \end{equation*}
+          et donc
+          \begin{equation*}
+            \frac{1}{v_{n+1}} = \frac{1}{v_n}\frac{1}{1 + \frac{1}{2}v_n + o(v_n)} = \frac{1}{v_n} - \frac12 + o(1)
+            \implies
+            \frac{1}{v_n} - \frac{1}{v_{n+1}} \sim \frac12.
+          \end{equation*}
+          La série $\sum 1/v_n - 1/{v_{n+1}}$ diverge et 
+          \begin{equation*}
+            \frac{1}{v_0} - \frac{1}{v_n} \sim \frac{n}{2}
+            \implies
+            v_n \sim \frac{2}{n}\leq 0.
+          \end{equation*}
+          La série de terme général $v_n$ est donc divergente.
+      \end{itemize}
+  \end{enumerate}
+\end{solution}
+\end{enonce}

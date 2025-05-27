@@ -1,0 +1,68 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS 121/2 E585, Mines-Ponts PSI},subtitle={},tags={}]
+On pose pour $M\in\mat_n(R)$,
+\begin{equation*}
+    f(M)=\left( \tr(M),\tr(M^2),\dotsc,\tr(M^n)\right).
+\end{equation*}
+\begin{enumerate}
+    \item Montrer que $f$ est de classe $\CC^1$ et calculer $\d f_M(H)$ pour tout $(M,H)\in\mat_n(\R)^2$.
+    \item Montrer que le rang de $\d f_M$ est égal au degré du polynôme minimal de $M$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+    \item Remarquons tout d'abord que $\mat_n(\R)$ étant de dimension finie, le résultat ne dépend pas des normes choisies.
+
+Fixons $k\in\ito n$.
+Les applications $M\mapsto M^k$ et $M\mapsto \tr(M)$ sont polynomiales en les coefficients de $M$, l'application $M\mapsto\tr(M^k)$ l'est donc également et à fortiori de classe $\CC^1$.
+
+Soient $(M,H)\in\mat_n(\R)^2$ et $t\in\R$. En développant $(M+tH)^k$ et en ordonnant le résultat selon les puissances croissantes de $t$, on obtient
+\begin{equation*}
+    (M+tH)^k \underset{t\to0}= M^k + t \sum_{i=0}^{k-1} M^iH M^{k-1-i} + o(t).
+\end{equation*}
+D'où
+\begin{equation*}
+    \tr\left((M+tH)^k\right) \underset{t\to0}= \tr(M^k) + t k\tr(M^{k-1}H) + o(t).
+\end{equation*}
+Finalement
+\begin{equation*}
+    \d f_M(H) = \left( \tr(H),2\tr(MH),3\tr(M^2H),\dotsc, n\tr(M^{n-1}H)\right).
+\end{equation*}
+
+
+
+\item
+    Pour $k\in\oto{n-1}$, Notons $f_k$ la forme linéaire sur $\mat_n(\R)$ définie par $f_k(H)= (k+1)\tr(M^k H)$. Le rang de $f$ est également le rang de la famille $f_0,\dotsc, f_{n-1}$ dans $\mat_n(\R)^*$.
+
+Soit $P$ le polynôme minimal de $\d f_M$ et $p$ son degré.
+Nous allons montrer que $f_{p},\dotsc,f_{n-1}$ sont combinaisons linéaires de $f_0,\dotsc,f_{p-1}$.
+
+    Les matrices $M^p, M^{p+1},\dotsc,M^{n-1}$ sont combinaisons linéaires de $I_n,M,M^2,\dotsc,M^{p-1}$. En effet, pour $k\in\nto{p}{n-1}$, il existe des polynômes $Q$ et $R$ tels que
+\begin{equation*}
+    X^k = Q P+ R \et \deg R<\deg P=p ;
+\end{equation*}
+et donc, il existe $a_0,\dotsc,a_{p-1}\in\R$ tels que $M^k=R(M)=a_0I_n+a_1M+\dotso+a_{p-1}M^{p-1}$.
+Finalement, pour tout $H\in\mat_n(\R)$, 
+\begin{equation*}
+f_k(H)/(k+1)=\tr(M^kH)=\sum_{i=0}^{p-1} a_i\tr(M^iH)=\sum_{i=0}^{p-1} \frac{a_i}{i+1}f_i(H).
+\end{equation*}
+Les applications $f_{p},\dotsc,f_{n-1}$ sont donc combinaisons linéaires de $f_0,\dotsc,f_{p-1}$, et par suite $\rg \d f_M\leq p=\deg P$.
+
+Soit $r=\rg \d f_M=r$.
+La famille $f_0,f_1,\dotsc,f_r$ est alors liée, donc il existe $\lambda_0,\dotsc,\lambda_r\in\R$ non tous nuls tels que
+\begin{equation*}
+\lambda_0 f_0+\dotsm+\lambda_rf_r=0 ;
+\end{equation*}
+c'est-à-dire 
+\begin{equation*}
+\forall H\in\mat_n(\R), \tr\left( (\lambda_0 I_n+\lambda_1M+\dotsm+\lambda_r M^r) H\right) = 0.
+\end{equation*}
+En utilisant ce résultat avec $H=\transp{(\lambda_0 I_n+\lambda_1M+\dotsm+\lambda_r M^r)}$ (rappelons que $(A,B)\mapsto\tr(\transp AB)$ est un produit scalaire sur $\mat_n(\R)$), on obtient
+\begin{equation*}
+    \lambda_0 I_n+\lambda_1M+\dotsm+\lambda_r M^r=0_n ;
+\end{equation*}
+Autrement dit, le polynôme $\lambda_0+\lambda_1X+\dotsm+\lambda_rX^r$ annule $M$ ;
+il est donc divisible par $P$ et non nul, d'où $\deg P\leq r =\rg \d f_M$.
+\end{enumerate}
+\end{solution}
+\end{enonce}

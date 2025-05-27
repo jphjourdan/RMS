@@ -1,0 +1,16 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS121/2 E648,Mines-Pont PC},subtitle={},tags={}]
+Nature de la série de terme général $u_n=\sin\left( \pi n^3\left( \ln\frac{n}{n-1} \right)^2  \right)$ ? 
+\end{exercise}
+\begin{solution}
+\begin{align*}
+    \pi n^3\pi \left(\ln\left( \frac{n}{n-1} \right) \right)^2 
+&=\pi n^3\pi \left(\ln\left( 1-\frac1n \right) \right)^2 
+  = \pi n+\pi +\frac{11\pi }{12 n}+\frac{5\pi }{6{n}^{2}}+o\left(\frac1{n^2}\right).\\
+\sin\left( \pi n^3\left( \ln\frac{n}{n-1} \right)^2  \right)
+  &= (-1)^{n+1}\sin\left( \frac{11\pi }{12 n}+\frac{5\pi }{6{n}^{2}} +o\left(\frac1{n^2}\right) \right) \\
+  u_n&= \underbrace{(-1)^{n+1}\frac{11\pi}{12 n}}_{v_n} + \underbrace{(-1)^{n+1}\frac{5\pi}{6n^2} + o\left(\frac1{n^2}\right)}_{w_n}.
+\end{align*}
+  D'après le critère des séries alternée, $\sum v_n$ est convergente. De plus, $\abs{w_n}=O\left(\frac1{n^2}\right)$ ; la série $\sum w_n$ est donc absolument convergente par comparaison à une série de Riemann. La série $\sum u_n$ est donc convergente.
+\end{solution}
+\end{enonce}

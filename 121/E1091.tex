@@ -1,0 +1,52 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS121/2 E1091 CCP},subtitle={},tags={}]
+Pour $n\in\N$ avec $n\geq2$, soit $u_n:x\mapsto \dfrac{xe^{-nx}}{\ln(n)}$.
+\begin{enumerate}
+\item Déterminer le domaine de définition $D$ de la série de fonctions de terme général $u_n$. 
+    
+On pose pour tout $x\in D$, $S(x)=\sum_{n\geq2} u_n(x)$.
+\item Montrer qu'il n'y a pas convergence normale de la série de fonctions sur $D$.
+\item Si $n\geq2$, soit $R_n:x\in D\mapsto\sum_{k\geq n+1} u_k(x)$. Montrer
+\begin{equation*}
+\forall x\in D, \abs*{R_n(x)}\leq\frac{1}{\ln(n)}.
+\end{equation*}
+\item
+La fonction $S$ est-elle continue sur $D$ ? Est-elle intégrable sur $D$ ?
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item $D=\R+$. En effet, si $x<0$, $u_n(x)\xlim_{n\to+\infty} -\infty$, la série $\sum u_n(x)$ ne peut donc converger. Si $x=0$, alors pour tout $n\geq 2$, $u_n(x)=0$, la série $\sum u_n(x)$ converge donc trivialement. Enfin, si $x>0$, $u_n(x) = O(e^{-nx})$ ; or la série géométrique de raison $e^{-x}\in[0,1[$ est convergente, la série $\sum u_n(x)$ converge donc absolument.
+\item Une étude rapide de $u_n$ montre que $\norm{u_n}_\infty=u_n(1/n)=\frac{e^{-1}}{n\ln (n)}$. Or la série $\sum_{n\geq2} \frac1{n\ln n}$ diverge par comparaison à l'intégrale $\int_2^\infty \frac1{x\ln x}\d x$ (c'est une série de Bertrand).
+La série ne converge donc pas normalement sur $D$.
+\item Le résultat est trivial pour $x=0$. Soit $x>0$.
+    
+Pour $n\geq 2$ et $k\ge n+1$,
+\begin{equation*}
+0\le u_k(x) \le \frac{x}{\ln n} e^{-kx}\le \frac{x}{\ln n}\int_{k-1}^k e^{-tx}\d t.
+\end{equation*}
+On a donc
+\begin{equation*}
+0\le R_n(x) = \sum_{k\ge n+1} u_k(x)\le \frac{x}{\ln n}\int_{n}^\infty e^{-tx}\d t = \frac{e^{-nx}}{\ln n}\le \frac1{\ln n}.
+\end{equation*}
+\item
+Le résultat précédent montre que la série de $\sum u_n$ converge uniformément sur $D$.
+De plus, les fonctions $u_n$ sont continues sur $D$, donc $S$ est également continue.
+
+Pour $n\ge 2$,
+\begin{equation*}
+\int_0^\infty \abs{u_n(x)}\d x=
+\int_0^\infty u_n(x)\d x=
+\frac{1}{\ln n}\left[-\frac{\left( nx+1\right) e^{-nx}}{n^2}\right]_0^\infty
+=\frac{1}{n^2\ln n}
+=o\pfrac{1}{n^2}.
+\end{equation*}
+Par comparaison à une série de Riemann convergente, la série $\sum_{n\ge2}\int_0^\infty \abs{u_n(x)}\d x$ est  convergente. De plus la fonction $S$ est continue (par morceaux) sur $D$ donc $S$ est intégrable sur $D$, on a d'ailleurs
+\begin{equation*}
+\int_0^\infty S(x)\d x
+= \sum_{n\ge2}\int_0^\infty u_n(x)\d x
+= \sum_{n\ge2} \frac{1}{n^2\ln n}.
+\end{equation*}
+\end{enumerate}
+\end{solution}
+\end{enonce}

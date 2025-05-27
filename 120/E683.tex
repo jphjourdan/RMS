@@ -1,0 +1,73 @@
+\begin{enonce}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Que d'erreurs d'énoncé dans l'original ! %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{exercise}[ID={RMS 120/683 Mines-Ponts PC},subtitle={},tags={}]
+Soit $E=\Set{f\in\CC^0(\R>,\C) | \forall s>0, u\mapsto \frac{f(u)}{u+s} \text{ est intégrable sur }\R>}$.
+    On note, pour $s>0$,
+$\hat f(s)=\int_0^{+\infty} \frac{f(u)}{u+s}\d u$.
+
+\begin{enumerate}
+\item Soit $L$ l'ensemble des fonctions continues et intégrables sur $\R>$. Comparer $L$ à $E$.
+\item Soit $f_\alpha:u\mapsto u^{\alpha-1}$. Pour quelles valeurs de $\alpha$ a-t-on $f_\alpha\in E$ ?
+\item Soit $\alpha$ tel que $f_\alpha\in E$. Montrer que $\hat{f_\alpha}$ est continue sur $\R>$ et donner sa limite en $+\infty$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item Soit $f\in L$.
+Pour $s>0$, on a
+\begin{equation*}
+    \abs*{\frac{f(u)}{u+s}}\underset{u\to 0}\sim \frac{\abs{f(u)}}{s}
+    \et
+    \abs*{\frac{f(u)}{u+s}}\underset{u\to +\infty}= o\left(\abs{f(u)}\right).
+\end{equation*}
+Par comparaison, $f\in E$.
+Réciproquement, soit la fonction $f:u\mapsto \frac{1}{u+1}$. Alors, pour tout $s>0$,
+\begin{equation*}
+    \abs*{\frac{f(u)}{u+s}}\xlim_{u\to 0} \frac1s
+    \et
+    \abs*{\frac{f(u)}{u+s}}\underset{u\to +\infty}\sim \frac{1}{u^2}.
+\end{equation*}
+On a donc $f\in E$. Or $f(u)\underset{u\to+\infty}\sim \frac1u$, donc $f\notin L$.
+
+En conclusion $\boxed{L\subsetneq E}$.
+
+
+\item Soit $\alpha\in\R$ et $s>0$. On a
+\begin{equation*}
+    \abs*{\frac{f_\alpha(u)}{u+s}}\underset{u\to 0}\sim u^{\alpha-1},
+\end{equation*}
+donc $\frac{f_\alpha(u)}{u+s}$ est intégrable au voisinage de $0$ si et seulement si $\alpha-1>-1$, c'est-à-dire $\alpha>0$.
+
+De plus,
+\begin{equation*}
+    \abs*{\frac{f_\alpha(u)}{u+s}}\underset{u\to +\infty}\sim u^{\alpha-2},
+\end{equation*}
+donc $\frac{f_\alpha(u)}{u+s}$ est intégrable au voisinage de $+\infty$ si et seulement si $\alpha-2<-1$, c'est-à-dire $\alpha<1$.
+
+En conclusion $f_\alpha\in E$ si et seulement si $0<\alpha<1$.
+
+\item
+Pour $(s,u)\in \R>\times\R>$, on pose $g(s,u)=\frac{u^{\alpha-1}}{u+s}$.
+
+Fixons $S>0$ et supposons $s\in[S,+\infty[$.
+Puisque $f_\alpha\in E$, l'application $g(s,*):u\mapsto \frac{u^{\alpha-1}}{u+s}$ est intégrable sur $\R>$, de plus
+\begin{equation*}
+\abs{g(s,u)}\le \frac{u^{\alpha-1}}{u+S}.
+\end{equation*}
+or $u\mapsto\frac{u^{\alpha-1}}{u+S}$ est intégrable sur $]0,+\infty[$ car $f_\alpha\in E$. L'application $\widehat{f_\alpha}:s\mapsto \int_0^\infty g(s,u)\d u$ est donc continue sur $[S,+\infty[$, pour tout $S>0$, et donc est continue sur $]0,+\infty[$.
+
+Le théorème de convergence dominée permet, avec la même hypothèse de domination, de montrer que l'on peut permuter limite et intégrale (considérer $f(s_n,u)$ avec $s_n\xlim_{n\to+\infty} +\infty$). On peut également travailler directement, par exemple
+\begin{align*}
+0\le \widehat{f_\alpha}(s)
+    &=\int_0^s \frac{u^{\alpha-1}}{u+s}\d u + \int_s^\infty\frac{u^{\alpha-1}}{u+s}\d u \\
+    &\le \int_0^s \frac{u^{\alpha-1}}{s}\d u +\int_s^\infty u^{\alpha-2}\d u\\
+    &= \frac{s^{\alpha-1}}{\alpha} - \frac{s^{\alpha-1}}{\alpha-1}\\
+    &\xlim_{s\to+\infty} 0.
+\end{align*}
+Donc $\boxed{\widehat{f_\alpha}(s)\xlim_{s\to+\infty} 0}$.
+
+\end{enumerate}
+\end{solution}
+\end{enonce}

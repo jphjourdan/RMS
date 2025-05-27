@@ -1,0 +1,29 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS133 E1274},subtitle={IMT MP 2022},tags={mpsi},difficulty={}]
+  Soit $P=X^n - a_{n-1} X^{n-1} - \dots - a_0$ avec $a_0>0$ et $a_1,\dots,a_{n-1}$ réels positifs.
+  \begin{enumerate}
+    \item Montrer que $P$ admet une unique racine sur $\R+$, que l'on note $\rho$.
+    \item Soit $z$ une racine complexe de $P$. Montrer que $\abs{z}\leq\rho$.
+    \item Montrer que $\rho\leq \max\left( 1, a_0 + \dots + a_{n-1} \right)$.
+    \item Montrer que $\rho\leq  1 + \max\left( a_0, \dots, a_{n-1} \right)$.
+  \end{enumerate}
+\end{exercise}
+\begin{comment}
+  \begin{enumerate}
+    \item Récurrence et étude de fonction.
+
+    \item Avec l'inégalité triangulaire, $P(\abs{z})\leq 0$, d'où $\abs{z}\leq \rho$ d'après l'étude de fonction.
+
+    \item Si $\rho>1$, alors
+      \begin{equation*}
+        \rho = a_{n-1} + \dots + \frac{a_{0}}{\rho^{n-1}} \leq a_{n-1} + \dots + a_{0}.
+      \end{equation*}
+
+    \item Avec $M=\max\set{a_0,\dots, a_{n-1}}$,
+      \begin{equation*}
+        \rho^n \leq M (\rho^{n-1}+\dots+1) = M \frac{\rho^n - 1}{\rho - 1},
+      \end{equation*}
+      d'où $\rho-1\leq (\rho - 1) \frac{\rho^n}{\rho - 1} \leq M$.
+  \end{enumerate}
+\end{comment}
+\end{enonce}

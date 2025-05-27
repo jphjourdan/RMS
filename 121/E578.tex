@@ -1,0 +1,84 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS121/2 E578, Mines-Ponts PSI},subtitle={},tags={}]
+Soit $f\in\CC^0(\R,\C)$, $2\pi$-périodique. On suppose que les coefficients de Fourier $c_n(f)$ de $f$ sont tous positifs ou nuls.
+\begin{enumerate}
+\item Soit $r\in]0,1[$. Montrer
+\begin{equation*}
+    \sum_{n=-\infty}^{+\infty} c_n(f) r^{\abs n} 
+    = \frac1{2\pi}\int_0^{2\pi} \frac{(1-r^2)f(t)}{r^2-2r\cos(t)+1}\d t.
+\end{equation*}
+\item Montrer que la série $\sum_{n=-\infty}^{+\infty} c_n(f)$ est convergente.
+\item Montrer que $f$ est égale à la somme de sa série de Fourier.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+\begin{enumerate}
+\item Formellement, on a
+\begin{align*}
+\sum_{n=-\infty}^{+\infty} c_n(f) r^{\abs n}
+&= c_0(f) + \sum_{n=1}^{+\infty} (c_n(f)+c_{-n}(f)) r^n\\
+&= \frac1{2\pi}\int_0^{2\pi} f(t)\d t
++\frac1{2\pi}\sum_{n=1}^{+\infty} \int_0^{2\pi} r^n e^{-int}f(t)\d t
++\frac1{2\pi}\sum_{n=1}^{+\infty} \int_0^{2\pi} r^n e^{int}f(t)\d t.
+\end{align*}
+
+
+Pour tout $t\in[0,2\pi]$, on a $\abs*{r^n e^{\pm int} f(t)}\leq r^n\norm f_\infty$.
+Puisque $r\in]0,1[$, la série $\sum_{n\geq 1}  r^n\norm f_\infty$ est convergente ;
+on a donc convergence normale de la série  $\sum_{n\geq 1} r^n e^{\pm int} f(t)$ sur $[0,2\pi]$.
+La série de terme général $\int_0^{2\pi} r^ne^{\pm int}f(t)\d t$ est donc convergente et
+\begin{align*}
+    \sum_{n=1}^{+\infty} \int_0^{2\pi}r^n e^{-int}f(t)\d t 
+    &= 
+    \int_0^{2\pi} \sum_{n=1}^{+\infty} r^n e^{-int}f(t)\d t 
+    = 
+    \int_0^{2\pi}\frac{r e^{-it}}{1-re^{-it}}f(t) ;\\
+\et \sum_{n=1}^{+\infty} \int_0^{2\pi}r^n e^{int}f(t)\d t 
+    &= 
+    \int_0^{2\pi} \sum_{n=1}^{+\infty} r^n e^{int}f(t)\d t 
+    = 
+    \int_0^{2\pi}\frac{r e^{it}}{1-re^{it}}f(t).
+\end{align*}
+Finalement,
+\begin{align*}
+\sum_{n=-\infty}^{+\infty} c_n(f) r^{\abs n}
+&= c_0(f) + \sum_{n=1}^{+\infty} (c_n(f)+c_{-n}(f)) r^n\\
+&= \frac1{2\pi}\int_0^{2\pi} 
+\left( 1+ \frac{r e^{-it}}{1-re^{-it}}+\frac{r e^{it}}{1-re^{it}}\right) 
+f(t) \d t\\
+&= \int_0^{2\pi} \frac{(1-r^2)f(t)}{r^2-2r\cos(t)+1}\d t.
+\end{align*}
+
+
+
+On peut également utiliser la convergence de la série
+\begin{equation*}
+\sum_{n\geq 1} \int_0^{2\pi} \abs*{r^n e^{\pm int} f(t)} \d t
+=
+\int_0^{2\pi} \abs{f(t)} \d t \sum_{n\geq 1} r^n.
+\end{equation*}
+et la continuité de $t\mapsto\sum_{n=1}^{+\infty} r^n e^{\pm int}f(t)$ pour justifier l'interversion somme-intégrale.
+
+\item 
+Les coefficients de Fourier $c_n(f)$ de $f$ sont tous $\geq 0$.
+La série $\sum_{n=-\infty}^{+\infty} c_n(f)$ est donc convergente si et seulement si les sommes partielles $\sum_{n=-N}^{+N} c_n(f)$ sont majorées indépendamment de $N$.
+
+Le résultat de la question précédente appliquée à $f=1$ montre que, pour tout $r\in]0,1[$, $\int_0^{2\pi}  \frac{(1-r^2)}{r^2-2r\cos(t)+1}\d t=1$.
+
+
+Pour tout $N\in\N$ et tout $r\in]0,1[$, on a donc
+\begin{equation*}
+\sum_{n=-N}^N c_n(f) r^{\abs n}
+\leq
+\sum_{n=-\infty}^{+\infty} c_n(f) r^{\abs n}
+=
+\frac1{2\pi}\int_0^{2\pi} \frac{(1-r^2)f(t)}{r^2-2r\cos(t)+1}\d t
+\leq
+\frac{\norm{f}_\infty}{2\pi}.
+\end{equation*}
+En faisant tendre $r$ vers $1$, on obtient $\sum_{n=-N}^N c_n(f) \leq \frac{\norm{f}_\infty}{2\pi}$ d'où le résultat.
+
+\item La convergence de la série $\sum_{n=-\infty}^{+\infty} c_n(f)$ assure la convergence normale de la série de Fourier de $f$. Celle-ci converge bien vers $f$ car $f$ est continue. %% injectivité de la transformée de fourier
+\end{enumerate}
+\end{solution}
+\end{enonce}

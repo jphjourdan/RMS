@@ -1,0 +1,59 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS133 E695},subtitle={Mines-Ponts PSI 2022},tags={},difficulty={}]
+\begin{enumerate}
+  \item Montrer qu'il existe une unique suite de polynôme $\left( H_n \right)_{n\in\N}$ telle que
+    \begin{equation*}
+      \forall x\in\R, \forall t\in\R, e^{xt-t^2/2} = \sum_{n=0}^{+\infty} H_n(x) t^n.
+    \end{equation*}
+  \item Montrer
+    \begin{equation*}
+      \forall n\in\N*, (n+1) H_{n+1} = X H_n - H_{n-1} \quad\et\quad H_n' = H_{n-1}.
+    \end{equation*}
+
+  \item On munit $\R[X]$ du produit scalaire $\PS{P}{Q}=\int_{-\infty}^{+\infty} P(t)Q(t) e^{-t^2/2} \d t$.
+    Montrer que $\left( H_n \right)_{n\in\N}$ est une famille orthogonale de $\R[X]$.
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+    \item Par produit de deux série entières de rayon de convergence égal à $+\infty$,
+      \begin{equation*}
+        e^{xt} e^{-t²/2} 
+        = \left( \sum_{p=0}^{+\infty} \frac{x^p t^p}{p!} \right) \left( \sum_{q=0}^{+\infty} (-1)^q \frac{t^{2q}}{2^q q!} \right)
+        = \sum_{n=0}^{+\infty} \left( \sum_{p+2q=n} (-1)^q\frac{x^p}{2^q p! q!} \right) t^n.
+      \end{equation*}
+
+      Comme $H_n(x)=\sum_{p+2q=n} (-1)^q\frac{x^p}{2^q p! q!}$ est un polynôme (de degré $n$), la suite $(H_n)$ est l'unique suite répondant à la question (unicité du développement en série entière pour la variable $t$).
+
+
+    \item La relation $H_n'=H_{n-1}$ provient d'une dérivation directe:
+      \begin{equation*}
+        H_n'(x) 
+        = \sum_{p\geq1, p+2q=n} (-1)^q \frac{x^{p-1}}{2^q(p-1)!q!}
+        = \sum_{p+2q=n} (-1)^q \frac{x^{p}}{2^q p! q!}
+        = \sum_{p+2q=n-1} (-1)^q \frac{x^{p}}{2^q p! q!}
+      \end{equation*}
+      En ce qui concerne la première relation, on peut écrire
+      \begin{equation*}
+        \frac{\d}{\d t} e^{xt} e^{-t^2/2} 
+        = \sum_{n=1}^{+\infty} n H_n(x) t^{n-1}
+        = \sum_{n=0}^{+\infty} (n+1) H_{n+1}(x) t^{n}.
+      \end{equation*}
+      D'un autre coté,
+      \begin{align*}
+        \frac{\d}{\d t} e^{xt} e^{-t^2/2} 
+        &= (x-t) e^{xt}e^{-t^2/2} = \sum_{n=0}^{+\infty} x H_n(x) t^n + \sum_{n=0}^{+\infty} H_n(x) t^{n+1}\\
+        &= \sum_{n=0}^{\infty} x H_n(x) t^n + \sum_{n=1}^{\infty} H_{n-1}(x)t^n.
+      \end{align*}
+      L'examen du coefficient de $t^n$ fournit $(n+1)H_{n+1} = X H_n - H_{n-1}$.
+
+
+    \item En posant
+      \begin{equation*}
+        \frac{\d^n}{\d x^n} e^{-x^2/2} = (-1)^n n! K_n(x) e^{-x^2/2},
+      \end{equation*}
+      on obtient en dérivant la même relation $(n+1)K_{n+1}=X K_n - K_n'$ puis $K_n = H_n$.
+      Reste à effectuer une intégration par parties...
+  \end{enumerate}
+\end{solution}
+\end{enonce}
