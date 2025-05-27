@@ -1,0 +1,59 @@
+# Fichiers de compilation LaTeX
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.xsim
+
+# Fichiers générés par dvipdfmx ou pdfLaTeX
+*.dvi
+*.ps
+*.pdf
+
+# Fichiers temporaires d'éditeurs
+*~
+*.bak
+*.backup
+*.tmp
+
+# Fichiers de cache d’éditeurs
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Emacs / Vim / autres éditeurs
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.lof
+*.lot
+*.maf
+*.mtc*
+*.out.ps
+*.run.xml
+*.slg
+*.syg
+*.tdo
+*.xdy
+
+# Répertoires de compilation (ex : latexmk avec -output-directory)
+_build/
+build/
+output/
+xsim/
