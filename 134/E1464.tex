@@ -1,0 +1,42 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1464},subtitle={IMT MP 2023},difficulty={},tags={analyse, mines-telecom, 2023}]
+  Soient $E$ un espace euclidien et $\mathcal{K}$ l'ensemble des
+  projecteurs orthogonaux de $E$. Soit $p$ un projecteur.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer que: $p\in\mathcal{K} \eq \forall x\in E,
+    \|p(x)\|\le \|x\|$.
+  \item Montrer que $\mathcal{K}$ est un compact.
+  \end{enumerate}
+  %exo 1464  RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Classique. Si $p$ est un projecteur orthogonal, $\|p(x)\|^2\le
+    \|p(x)\|^2+(x-\|p(x)\|)^2=\|x\|^2$ puisque $p(x)$ et $x-p(x)$ sont
+    orthogonaux. Pour la réciproque, on fixe $x\in \Ker(p)$ et
+    $y\in\Im(p)$ et on écrit que l'hypotèse donne pour tout $t\in\R$:
+    \[t^2\|y\|^2=\|p(x+ty)\|^2\le \|x+ty\|^2=\|x\|^2+2t\langle
+      x,y\rangle+t^2\|y\|^2\]
+    On exhibe ainsi une fonction affine $t\mapsto \|x\|^2+2t\langle
+      x,y\rangle$ positive, ce qui n'est possible qu'avec $\langle
+      x,y\rangle=0$.
+    \item Munissons $\Lin(E)$ de la norme d'opérateur
+      $\vvvert\;\vvvert$. La question précédente prouve que
+      $\vvvert p\vvvert\le 1$ pour tout $p\in\mathcal{K}$ (on a même
+      en fait $\vvvert p\vvvert=1$ pour $p$ non nul), et donc que
+      $\mathcal{K}$ est une partie bornée. Comme $\Lin(E)$ est de
+      dimension finie, il suffit pour conclure de montrer que
+      $\mathcal{K}$ est fermée et on procède par caractérisation
+      séquentielle. Soit $(p_n)_n$ une suite de $\mathcal{K}$ qui
+      converge vers $p\in\Lin(E)$. Alors:
+      \begin{itemize}
+      \item $p_n\circ p_n=p_n$ pour tout $n\in\N$ et donc $p\circ p=p$
+        en passant à la limite. $p$ est donc un projecteur.
+      \item Pour tout $x\in E$, $\|p_n(x)\|\le \|x\|$ pour tout
+        $n\in\N$ d'après la question précédente, et donc $\|p(x)\|\le
+        \|x\|$ en passant à la limite. D'où $p\in\mathcal{K}$ d'après
+        la question précédente.
+      \end{itemize}
+  \end{enumerate}
+\end{solution}
+\end{enonce}

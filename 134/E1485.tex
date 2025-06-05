@@ -1,0 +1,28 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1485},subtitle={IMT MP 2023},tags={analyse, mines-telecom, 2023},difficulty={}]
+  On considère la suite $(u_n)_{n\ge 0}$ de fonctions définies sur $\R$
+ par $u_0=id$ et, pour $n\in\N$, $u_{n+1}=\sin\circ u_n+u_n$.
+ \begin{enumerate}[\bfseries a)]
+ \item Étudier la convergence simple de $(u_n)$.
+ \item La convergence est-elle uniforme ?
+ \end{enumerate}
+  %exo 1485 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Pour $x\in\R$ fixé, la suite $(u_n(x))$ s'écrit plus
+    simplement $(v_n)$, avec $v_0=x$ et $v_{n+1}=f(v_n)$ avec
+    $f:t\mapsto\sin(t)+t$. $f$ est croissante et admet $\pi\Z$ comme
+    ensemble de points fixes. $(v_n)$ est donc monotone et doit
+    converger vers un multiple de $\pi$. Le sens de monotonie dépend
+    du signe de $v_1-v_0$, et on a $v_0\le v_1$ ssi $\sin(x)\le
+    0$. Pour $x\in ]n\pi,(n+1)\pi[$, on différentie alors les cas $n$
+    pairs et impairs. On obtient que la limite $u$ de $u_n$ est la
+    fonction constante par morceaux $x\mapsto (2n+1)\pi$ si
+    $x\in]2n\pi,(2n+2)\pi[$, et $2n\pi\mapsto 2n\pi$. 
+  \item Non, bien sûr, la limite n'étant pas continue. Il doit y avoir
+    convergence sur les segment $[a,b]$ si $2n\pi<a<b<(2n+2)\pi$ pour
+    un certain $n\in\Z$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

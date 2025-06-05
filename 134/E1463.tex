@@ -1,0 +1,56 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1463},subtitle={IMT MP 2023},difficulty={},tags={analyse, mines-telecom, 2023}]
+  Soit $(a,b)\in\R^2$. Déterminer
+  $\dlim_{n\to +\infty}
+  \begin{pmatrix}
+    \cos(\frac{a}n) & \sin(\frac{b}n)\\
+    \sin(\frac{b}n) & \cos(\frac{a}n)
+  \end{pmatrix}^n$.
+  
+  %exo 1463  RMS 134-1
+\end{exercise}
+\begin{solution}
+  Avec $a_n=\cos(\frac{a}n)$ et $b_n=\sin(\frac{b}n)$, la matrice
+  $A_n=
+  \begin{pmatrix}
+    a_n & b_n\\
+    b_n & a_n
+  \end{pmatrix}$ est diagonalisable de valeurs propres $a_n+b_n$ et
+  $a_n-b_n$, et on trouve plus précisément:
+  \[A_n=\dfrac12
+    \begin{pmatrix}
+      1 & 1\\
+      1 & -1
+    \end{pmatrix}
+    \begin{pmatrix}
+      a_n+b_n & 0\\
+      0 & a_n-b_n
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 1\\
+      1 & -1
+    \end{pmatrix}\]
+  En écrivant $a_n=1+\dfrac{b}n+\o\left(\dfrac1{n}\right)$, on obtient
+  que $a_n^n\to\e^b$ et on trouve de même $b_n\to\e^{-b}$. On a
+  finalement:
+  \[\begin{pmatrix}
+    \cos(\frac{a}n) & \sin(\frac{b}n)\\
+    \sin(\frac{b}n) & \cos(\frac{a}n)
+  \end{pmatrix}^n\to \dfrac12\begin{pmatrix}
+      1 & 1\\
+      1 & -1
+    \end{pmatrix}
+     \begin{pmatrix}
+      \e^{b} & 0\\
+      0 & \e^{-b}
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 1\\
+      1 & -1
+    \end{pmatrix}=
+     \begin{pmatrix}
+      \ch(b) & \sh(b)\\
+      \sh(b) & \ch(b)
+    \end{pmatrix}\]
+\end{solution}
+\end{enonce}

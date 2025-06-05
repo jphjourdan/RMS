@@ -1,0 +1,28 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1459},subtitle={IMT MP 2023},difficulty={},tags={analyse, mines-telecom, 2023}]
+  Soit $E$ un $\R$-espace vectoriel normé de dimension finie. Soit
+ $(u_n)_{n\in\N}\in E^{\N}$ une suite telle que, pour tout vecteur
+ $x\in E$, la suite $(\|x-u_n\|)_{n\in\N}$ converge.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que la suite $(u_n)_{n\in\N}$ a une valeur d'adhérence.
+ \item Montrer que la suite $(u_n)_{n\in\N}$ converge.
+ \end{enumerate}
+  
+  %exo 1459  RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Avec $x=0$ on a en particulier la convergence de la suite
+    $(\|u_n|_{\infty})$ et la suite $(u_n)$ est donc bornée. $E$ étant
+    de dimension finie, le théorème de Bolzano-Weirestrass nous assure
+    alors de l'existence d'une valeur d'adhérence $\ell$ pour $(u_n)$.
+  \item Par hypothèse, la suite $(\|\ell-u_n\|)_{n\in\N}$ converge
+    vers un certain réel $a\ge 0$. Mais $\ell$ étant une valeur
+    d'adhérence pour $(u_n)$, cette suite admet une suite extraite
+    $(u_{\varphi(n)})$ qui converge vers $\ell$ et la suite extraite
+    $(\|\ell-u_{\varphi(n)}\|)$ converge donc vers $0$. Comme elle
+    converge aussi vers $a$, on a $a=0$ par unicité de la limite et
+    donc $u_n\to \ell$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

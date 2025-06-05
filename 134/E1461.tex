@@ -1,0 +1,42 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1461},subtitle={IMT MP 2023},difficulty={},tags={analyse, mines-telecom, 2023}]
+  Soit $N$ définie sur $\R[X]$ par
+ $N\left(\dsum_{i=0}^na_iX^i\right)=\dmax_{0\le i\le n}|a_i|$.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que $N$ est une norme.
+ \item Soient $a\in\R$ et $\phi:P\in\R[X]\mapsto P(a)$. Pour quelles
+   valeurs de $a$ l'application $\phi$ est-elle continue pour la
+   norme $N$ ?
+ \end{enumerate}
+  %exo 1461  RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Pas de difficulté.%, la restriction de $N$ à $\R_n[X]$
+  %  % correspond en fait à la norme infini de $\R_{n+1}$.
+  \item Supposons $|a|<1$. Pour tout $P=\sum_{k=0}^da_kX^k$ non
+    nul de degré $d$, on a
+    \[\big|\phi(P)\big|=\left|\sum_{k=0}^da_ka^k\right|
+      \le\sum_{k=0}^d|a_k|\,|a|^k
+    \le N(P)\sum_{k=0}^d|a|^k
+    \le N(P)\dfrac{1}{1-|a|}\]
+    On en déduit que $\phi$ est continu, par critère fondamental de
+    continuité des applications linéaires (il faut bien sûr justifier
+    que $\phi$ est linéaire). Supposons maintenant $|a|\ge 1$ et
+    considérons la suite de
+    polynômes $(P_n)$ définie par
+    \[\forall n\in\N,\quad P_n=\dfrac1{n+1}\sum_{k=0}^n\dfrac1{a^k}X^k\]
+    On a ainsi $N(P_n)
+    =\dfrac1{n+1}\dmax_{0\le i\le n}\dfrac1{|a|^i}=\dfrac1{n+1}\to 0$, donc
+    $P_n\to 0$ au sens de la
+    norme $N$. Cependant, pour tout $n\in\N$, on a
+    \[\phi(P_n)=P_n(a)=\dfrac1{n+1}\sum_{k=0}^n\dfrac{a^k}{a^k}=1,\]
+    alors que la continuité de $\phi$ en $0$ devrait impliquer
+    $\phi(P_n)\to 0$ par caractérisation séquentielle. On a donc
+    montré que $\phi$ est continue si, et seulement si $|a|<1$.
+    
+    {\itshape Remarque: cet exercice et sa solution sont encore
+      valables si on se place dans $\C[X]$.}
+  \end{enumerate}
+\end{solution}
+\end{enonce}

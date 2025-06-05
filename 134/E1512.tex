@@ -1,0 +1,30 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1512},subtitle={IMT MP 2023},difficulty={},tags={analyse, mines-telecom, 2023}]
+  On considère
+  $f:x\mapsto\dint_0^{+\infty}\dfrac{1-\cos(tx)}{t^2}\e^{-t}\d t$.
+  \begin{enumerate}[\bfseries a)]
+  \item Donner le domaine de définition de $f$.
+  \item Montrer que $f$ est de classe $\mathcal{C}^2$ sur $\R$.
+  \item Exprimer $f''$.
+  \item En déduire des expressions de $f'$ et $f$ avec des fonctions
+    usuelles.
+  \end{enumerate}
+  
+  %exo 1512  RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item L'intégrale est bien convergente pour tout $x\in\R$, en
+    comparant l'intégrande à $\dfrac{2\e^{-t}}t$ lorsque $t\to
+    +\infty$ et en montrant que l'intégrande est prolongeable par
+    continuité en $0$ à l'aide d'un développement limité du $\cos$.
+  \item Le théorème de dérivation des intégrales à paramètre
+    s'applique sans difficulté. On obtient
+    \[f''(x)=\int_0^{+\infty}\cos(tx)\e^{-t}\d t\]
+  \item Deux IPP successive ou bien (plus rapide) un calcul via une
+    exponentielle complexe donnent $f''(x)=\dfrac1{1+x^2}$.
+  \item Pour une primitive de $\arctan$, faire une IPP de $1\times
+    \arctan(t)$ (même technique que pour $\ln$).
+  \end{enumerate}
+\end{solution}
+\end{enonce}

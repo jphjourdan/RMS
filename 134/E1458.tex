@@ -1,0 +1,41 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1458},subtitle={IMT MP 2023},difficulty={},tags={analyse, mines-telecom, 2023}]
+  On note $E$ l'ensemble des fonctions $f\in\mathcal{C}^1([0,1],\R)$
+ telles que $f(0)=0$. Pour $f\in E$, on pose $N(f)=\|f+f'\|_{\infty}$
+ et $N'(f)=\|f\|_{\infty}+\|f'\|_{\infty}$.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que $N$ et $N'$ sont des normes sur $E$.
+ \item Montrer que $N$ et $N'$ sont équivalentes.
+
+   {\itshape Indication: exprimer $f$ en fonction de $g=f+f'$}
+ \end{enumerate}
+  
+  %exo 1458  RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Pas de difficulté pour l'inégalité triangulaire et
+    l'homogénéité. Pour la séparation de $N$, dire que $N(f+f')=0$
+    implique que $f$ est solution sur $[0,1]$ du problème de Cauchy
+    défini par $y'=-y$ et $y(0)=0$ qui admet la fonction nulle comme
+    unique solution.
+  \item On a clairement $N\le N'$. Pour l'autre sens, posons
+    $g=f+f'$ comme indiqué. $f$ est solution de l'équation
+    différentielle linéaire $y+y'=g$, de sorte qu'en posant
+    $k(x)=\e^{x}f(x)$, on a $k'(x)=\e^xg(x)$ et donc:
+    \[f'(x)=g(x)-k(x)\e^{-x}=g(x)-\e^{-x}\int_0^xg(t)\e^t\d t\]
+    On en déduit:
+    \[|f'(x)|\le |g(x)|+\int_0^x\|g\|_{\infty}\e^t\d t
+      \le \|g\|_{\infty}\left(1+\int_0^x\e^t\d t\right)\le
+      e\|g\|_{\infty}\]
+    On a donc, par passage à la borne supérieure, $\|f'\|_{\infty}\le
+    \e\|g\|_{\infty}$.
+
+    Par ailleurs, l'inégalité des accroissements finis prouve
+    $|f(x)|=|f(x)-f(0)|\le x\|f\|_{\infty}$ pour tout $x\in [0,1]$ et
+    donc $\|f\|_{\infty}\le \|f'\|_{\infty}$. On a donc finalement
+    
+    \[N'(f)\le 2\|f'\|_{\infty}\le 2\e N(f)\]
+  \end{enumerate}
+\end{solution}
+\end{enonce}
