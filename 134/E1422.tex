@@ -1,0 +1,37 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1422},subtitle={IMT MP 2023},difficulty={},tags={algebre, mines-telecom, 2023}]
+  Soit $M\in\M_2(\Z)$ pour laquelle il existe $n\ge 1$ telle que
+  $M^n=I_2$. Montrer que $M^{12}=I_2$.
+  %exo 1422 RMS 134-1
+\end{exercise}
+\begin{solution}
+  Le spectre dans $\C$ étant $\{\lambda,\mu\}$, on a $\lambda\mu=1$ et
+  $\lambda^p=1$ de sorte que $|\lambda|=1$ et
+  $\mu=\lambda^{-1}=\conj{\lambda}$. Dès lors, en notant
+  $\lambda=\e^{i\theta}$, on a $2\cos(\theta)=\tr(A)\in\Z$, et
+  donc $\cos(\theta)\in \left\{-1,-\dfrac12,\dfrac12,1\right\}$.
+    \begin{itemize}
+    \item Si $\cos(\theta)=1$, $A$ est semblable
+      à $
+      \begin{pmatrix}
+        1 & \alpha\\
+        0 &  1
+      \end{pmatrix}$ est donc $A^p$ est semblable à $
+      \begin{pmatrix}
+        1 & p\alpha\\
+        0 & 1
+      \end{pmatrix}$ ce qui implique $\alpha=0$ et donc $A=I_2$. Même
+      raisonnement pour $\cos(\theta)=-1$ qui donne $A=-I_2$.
+    \item Si $\cos(\theta)=\dfrac12$, $A$ est
+      diagonalisable, de valeurs propres $\pm\e^{\frac{i\pi}3}$ de
+      sorte que $A^3=-I_2$.
+    \item Si $\cos(\theta)=-\dfrac12$, $A$ est
+      diagonalisable, de valeurs propres $\pm\e^{\frac{2i\pi}3}$ de
+      sorte que $A^3=I_2$.
+    \item Enfin si $\cos(\theta)=0$, $A$ est toujours diagonalisable,
+      de valeurs propre $\pm i$, et on a cette fois $A^2=-I_2$.
+    \end{itemize}
+    Dans tous les cas, on a bien $A^{12}=I_3$, $12$ étant la plus
+    petite valeur qui convient systématiquement.
+\end{solution}
+\end{enonce}

@@ -1,0 +1,23 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E586},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Écrire l'ensemble des matrices symétriques de $\M_2(\C)$ non
+diagonalisables comme réunion de deux plans vectoriels privés de leur
+droite d'intersection.
+   %exo 586 RMS 134-1
+\end{exercise}
+\begin{solution}
+  Une telle matrice $
+  \begin{pmatrix}
+    a & b \\ b & c
+  \end{pmatrix}$ doit avoir une valeur propre double et vérifie donc
+  $(a-c)^2+b^2=0$ (discriminant nul pour le polynôme caractéristique),
+  ce qui est équivalent à $c=a\pm ib$. En notant
+  $J=\begin{pmatrix}
+    0 & 1 \\ 1 & i
+  \end{pmatrix}$ et
+  $K=\begin{pmatrix}
+    0 & 1 \\ 1 & -i
+  \end{pmatrix}$, les deux plans en question sont $\vect(I_2,J)$ et
+  $\vect(I_2,K)$.
+\end{solution}
+\end{enonce}

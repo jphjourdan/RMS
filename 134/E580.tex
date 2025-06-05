@@ -1,0 +1,30 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E580},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soit $M\in\M_n(\C)$ admettant $n$ valeurs propres distinctes. Montrer
+que l'ensemble des matrices qui commutent avec $M$ est
+$\vect(I_n,M,\ldots,M^{n-1})$.
+   %exo 580 RMS 134-1
+\end{exercise}
+\begin{solution}
+  On peut commencer avec
+  $M=D=\mathrm{diag}(\lambda_1,\ldots,\lambda_n)$. Si $AD=DA$, on a
+  $\lambda_ja_{i,j}=[AD]_{i,j}=[DA]_{i,j}=\lambda_ia_{i,j}$ et donc
+  $a_{i,j}=0$ si $i\neq j$. Le commutant de $D$ est donc $D_n(\K)$,
+  sev des matrices diagonales, de dimension $n$. Il contient
+  $\vect(I_n,D,\ldots,D^{n-1})$ et on montre que la famille
+  $(I_n,D,\ldots,D^{n-1})$ est libre: une combinaison linéaire nulle
+  fournit un polynôme de $\C_{n-1}[X]$ à au moins $n$ racines
+  distinctes, donc nul. On a donc
+  $D_n(\K)=\vect(I_n,D\ldots,D^{n-1})$ (remarque: La décomposition
+  d'une matrice diagonale donnée s'obtient par interpolation de
+  Lagrange).
+
+  Dans le cas général, on peut se ramener au cas précédent en
+  diagonalisant: on écrit $M=PDP^{-1}$. Si $B=PAP^{-1}$ est dans le
+  commutant de $M$, $A$ est dans le commutant de $D$ donc
+  $A\in\vect(I_n,D,\ldots,D^{n-1})$ et
+  $B\in\vect(I_n,M,\ldots,M^{n-1})$ (remarque: on peut aussi
+  facilement affirmer que $(I_n,M,\ldots,M^{n-1})$ est une base de
+  $\K[M]$ car le polynôme minimal de $M$ est de degré $n$).
+\end{solution}
+\end{enonce}

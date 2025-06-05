@@ -1,0 +1,36 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E683},subtitle={Mines-Ponts MP 2023},tags={analyse, mines-ponts, 2023},difficulty={}]
+  \begin{enumerate}[\bfseries a)]
+  \item Soit $P\in\R[X]$ unitaire de degré $n\in\N^*$. Montrer que $P$
+    est scindé sur $\R$ si et seulement si: $\forall
+    z\in\C,\,|P(z)|\ge|\Im(z)|^n$.
+  \item Montrer que l'adhérence des matrices de $\M_n(\R)$
+    trigonalisables est fermé.
+  \item Quelle est l'adhérence de l'ensemble des matrices
+    diagonalisables de $\M_n(\R)$?
+  \end{enumerate}
+  %exo 683 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Si $P=\dprod_{k=1}^n(X-\lambda_k)$, on a $|z-\lambda_k|\ge
+    |\Im(z-\lambda_k)|=|\Im(z)|$ pour tout $k$, d'où $|P(z)|\ge
+    |\Im(z)|^n$. Réciproquement, si on a cette inégalité pour tout
+    $z$, on a $\Im(z)=0$ pour toute racine complexe, et $P$ est donc
+    scindé sur $\R$.
+  \item Soit $(M_k)_k$ est une suite convergente de matrices trigonalisables sur
+    $\R$, de limite $M$, et $(\chi_k)_k$ la suite des polynômes
+    caractéristiques. Si $z\in\C$, on a $|\chi_k(z)|\ge |\Im(z)|^n$
+    pour tout $k$, et $\|\chi_M(z)|\ge |\Im(z)|^n$ en passant à la
+    limite (continuité de $A\mapsto \chi_A$ et de $P\mapsto P(z)$).
+  \item Cette adhérence est déjà contenue dans l'ensemble fermé des
+    matrices trigonalisable d'après la question précédente. Pour
+    l'inclusion réciproque, on peut fixer une matrice trigonalisable
+    $M=PTP^{-1}$. On peut montrer alors que
+    $T_k=T+\mathrm{diag}\left(\dfrac{i}{k}\right)_{1\le i\le n}$ est
+    diagonalisable à partir d'un certain rang (valeurs propres $2$ à
+    $2$ distinctes). On a donc $M_k=PT_kP^{-1}$ diagonalisable et
+    $M_k\to M$ par continuité du produit matriciel.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

@@ -1,0 +1,43 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1423},subtitle={CCINP MP 2023},difficulty={},tags={algebre, ccinp, 2023}]
+  Soient $A\in\M_n(\R)$ et $B=
+ \begin{pmatrix}
+   A & A\\ 0 & A
+ \end{pmatrix}$.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que, pour $P\in\R[X]$, $P(B)=
+   \begin{pmatrix}
+     P(A) & AP'(A)\\
+     0 & P(A)
+   \end{pmatrix}$.
+ \item Donner une condition nécessaire et suffisante sur $A$ pour que
+   $B$ soit diagonalisable.
+ \end{enumerate}
+  %exo 1423 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Une récurrence permet de montrer que pour tout $k\in\N$, on a
+    $B^k= \begin{pmatrix}
+     A^k & kA^k\\
+     0 & kA^k
+   \end{pmatrix}$. La propriété à montrer est donc vraie pour tous les
+   polynômes de la base canonique $(X^k)$. On en déduit facilement,
+   par linéarité, qu'elle est vraie pour tout polynôme $P$.
+ \item Supposons $B$ diagonalisable. Il existe donc un polynôme $P$
+   scindé à racines simples et annulateur de $B$. La question
+   précédente permet d'affirmer qu'on alors $P(A)=0$ et $AP'(A)=0$. On
+   en déduit que $A$ est diagonalisable et que toute valeur propre de
+   $A$ est racine de $P$. Notons maintenant que $P'$ est scindé sur
+   $\C$ et peut s'écrire:
+   \[P'=\alpha\prod_{i=1}^d(X-\lambda_i),\]
+   avec $\lambda_1,\ldots,\lambda_d\in\C$. Le point crucial est
+   qu'aucun des $\lambda_i$ n'est racine de $P$, puisque $P$ est
+   scindé à racines simples. Il en résulte que $A-\lambda_iI_n$ est
+   inversible pour tout $i\in\llbracket 1,d\rrbracket$, et donc que
+   $P'(A)$ est inversible. On en déduit immédiatement la condition
+   nécessaire $A=0$, qui est bien sûr suffisante pour que $B$ soit
+   diagonalisable.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

@@ -1,0 +1,25 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E563},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  \begin{enumerate}[\bfseries a)]
+  \item Soit $f\in\Lin(\M_n(\K),\K)$ vérifiant: $\forall (A,B)\in\M_n(\K)^2$,
+    $f(AB)=f(BA)$. Montrer que $f$ est proportionelle à la trace.
+  \item Soit $g\in\Lin(\M_n(\K))$ un endomorphisme d'algèbre. Montrer
+    que $\tr\circ g=\tr$.
+  \end{enumerate}
+   %exo 563 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item  Notons $\lambda_{i,j}=f(E_{i,j})$ de sorte que
+    $f(A)=\sum\lambda_{i,j}a_{i,j}$. On a alors
+    $\lambda_{i,j}=f(E_{i,k}E_{k,j})=f(E_{k,j}E_{i,k})=
+    f(\delta_{i,j}E_{k,k})=\delta_{i,j}\lambda_{k,k}$, d'où, en notant
+    $\lambda_{k,k}=\lambda$ constant, et $f(A)=\lambda\sum a_{i,i}$.
+  \item $\tr\circ g$ vérifie les conditions de $f$ (on a notamment
+    $\tr\circ
+    g(AB)=\tr\big(g(A)g(B)\big)=\tr\big(g(B)g(A)\big)=\tr\circ
+    g(BA)$), donc s'écrit $\lambda\tr$. Or $\tr\circ
+    g(I_n)=\tr(I_n)=n=\lambda n$ donc $\lambda=1$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

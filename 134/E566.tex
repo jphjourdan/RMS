@@ -1,0 +1,19 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E566},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soient $E$ un $\K$-espace vectoriel de dimension finie et
+  $u\in\Lin(E)$. Montrer l'équivalence entre
+  \[i)\;u^2=0\quad\text{et}\quad \exists v\in\Lin(E),\;u\circ v+v\circ
+    u=id\qquad\qquad ii)\;\Im(u)=\Ker(u)\]
+   %exo 566 RMS 134-1
+\end{exercise}
+\begin{solution}
+  $i)\implique ii)$ facile. Pour $ii)\implique i)$, considérons un
+  supplémentaire $H$ de $K=\Ker(u)$, de sorte que la version
+  géométrique du théorème du rang nous dit que $u_{|_H}$ réalise un
+  isomorphisme de $H$ sur $\Im(u)=K$. On note $v\in\Lin(E)$ défini par
+  $u_{|_H}^{-1}$ sur $K$ et $0$ sur $H$. Un vecteur $x$ de $E$ s'écrit
+  de façon unique $x=x_K+x_H$ et on a $x_K=u_{|_H}\circ
+  u_{|_H}^{-1}(x_K)=u\circ v(x_K)$, et $x_H=u_{|_H}^{-1}\circ
+  u_{|_H}(x_H)=v\circ u(x_H)$, d'où $u\circ v+v\circ u=id$.
+\end{solution}
+\end{enonce}

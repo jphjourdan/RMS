@@ -1,0 +1,18 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E578},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soit $U$ une partie de $\M_n(\C)$ non vide, finie et stable par
+produit. Montrer qu'il existe $M\in U$ tel que $\tr
+M\in\{0,\ldots,n\}$.
+   %exo 578 RMS 134-1
+\end{exercise}
+\begin{solution}
+  On fixe $A\in U$, la famille $(A^n)_{n\in\N^*}$ doit être dans $U$
+  et finie 
+  donc il existe $n,p\in\N^*$ tels que
+  $A^n=A^{n+p}=A^{n+2p}=\cdots$ etc. Il existe $k\in\N^*$ tel que
+  $kp>n$, et on a alors $A^{kp}=A^nA^{kp-n}=A^{n+kp}A^{kp-n}=A^{2kp}$
+  et donc $M=M^2\in U$ en notant $M=A^{kp}$. $M$ représente un
+  projecteur et il en résulte (exercice classique)
+  $\tr(M)=\rg(M)\in\{0,\ldots,n\}$.
+\end{solution}
+\end{enonce}

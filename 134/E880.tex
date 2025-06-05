@@ -1,0 +1,16 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E880},subtitle={Oral Mines-Ponts},difficulty={},tags={probas, mines-ponts, 2023}]
+  On tire au hasard un élément $A$ de
+  $\mathcal{P}(\llbracket 1,n\rrbracket)$. Calculer la probabilité que
+  $\card A$ soit un entier pair.
+  %exo 880 RMS 134-1
+\end{exercise}
+\begin{solution}
+  $\Omega=\mathcal{P}(\llbracket 1,n\rrbracket)$ avec probabilité
+  uniforme. Le cardinal de l'événèment considéré $|E|$ vérifie:
+  \[|E|+|\conj{E}|=|\Omega|=2^n\qquad\text{et}\qquad
+    |E|-|\conj{E}|=\dsum_{k=0}^n(-1)^k\combi{n}{k}=0\]
+  On a donc $|E|=2^{n-1}$ et la probabilité cherchée vaut
+  $\dfrac12$.
+\end{solution}
+\end{enonce}

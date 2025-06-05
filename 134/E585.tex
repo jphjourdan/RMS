@@ -1,0 +1,41 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E585},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soient $E$ un $\R$-espace vectoriel de dimension finie,
+  $u\in\Lin(E)$, $a,b\in\R$ et $P=X^2+aX+b$. On suppose que $P$ est
+  irréductible et annulateur de $u$.
+  \begin{enumerate}[\bfseries a)]
+  \item Soit $x\in E\setminus\{0\}$. Montrer que $F_x=\vect(x,u(x))$
+    est un plan stable par $u$.
+  \item Soient $F$ un sous-espace vectoriel stable par $u$ et $x\in
+    E\setminus F$. Montrer que $F\cap F_x=\{0\}$.
+  \item Montrer que $u$ est diagonalisable par blocs identiques de
+    tailles $2\times 2$.
+  \end{enumerate}
+   %exo 585 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item $(x,u(x))$ est libre car $u(x)=\lambda x$ entrainerait
+    $\lambda$ racine réelle de $P$. La stabilité résulte de
+    $u^2(x)=-bx-au(x)\in F_x$.
+  \item Soit $y\in F\cap F_x$. Si $y\neq 0$, on a comme précédemment 
+    $(y,u(y))$ libre, et finalement $F_x=F_y\subset F$ par stabilité,
+    donc en particulier $x\in F$, absurde.
+  \item La dimension est forcément paire sinon il y aurait une valeur
+    propre réelle. Pour une rédaction par récurrence, je ne vois pas
+    bien comment faire apparaitre un supplémentaire stable de $F_x$.
+    En dimension $2n$, j'ai plus envie de construire $x_1,\ldots,x_n$
+    tel que $x_{i+1}\notin F_{x_1}\oplus\cdots\oplus F_{x_{i}}$, de
+    sorte que $E=F_{x_1}\oplus\cdots\oplus F_{x_{n}}$. L'endomorphisme
+    $u_i$ induit par $u$ sur $F_{x_i}$ est représenté dans
+    $(x_i,u(x_i))$ par la matrice
+    $M=
+    \begin{pmatrix}
+      0 & -b\\
+      1 & -a
+    \end{pmatrix}$, compagnon du polynôme $P$, et $u$ est représentée
+    par $\mathrm{diag}(M,\ldots,M)$ dans la base
+    $(x_1,u(x_1),\ldots,x_n,u(x_n))$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

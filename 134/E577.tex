@@ -1,0 +1,64 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E577},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soit $(M_{i,j})$ une base de $\M_n(\K)$ vérifiant: $\forall
+  (i,j,k,l)\in\llbracket 1,n\rrbracket^4,
+  M_{i,j}M_{k,l}=\delta_{j,k}M_{i,l}$.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer que $\Im(M_{i,j})$ est indépendante de $j$. On la
+    notera $F_i$.
+  \item Montrer que $\K^n=\bigoplus_{i=1}^nF_i$.
+  \item En déduire $\dim(F_i)$.
+  \item Montrer qu'il existe $P\in\GL_n(\K)$ telle que: $\forall
+    (i,j)\in\llbracket 1,n\rrbracket^2, M_{i,j}=PE_{i,j}P^{-1}$.
+  \item Expliciter les automorphismes de l'algèbre $\M_n(\K)$.
+  \end{enumerate}
+   %exo 577 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Pour $x\in\K^n$, on a
+    $M_{i,l}x=M_{i,j}M_{j,l}x\in\Im(M_{i,j})$ donc
+    $\Im(M_{i,l})\subset\Im(M_{i,j})$ et égalité par symétrie.
+  \item On peut décomposer $I_n=\sum\lambda_{i,j}M_{i,j}$ et on a donc
+    pour tout $x\in\K^n$:
+    \[x=\dsum_{1\le i,j\le n}\lambda_{i,j}M_{i,j}x\in\sum_{i=1}^nF_i\]
+    Pour montrer que la somme est directe, soit
+    $(y_1,\ldots,y_n)\in F_1\times\cdots F_n$ tels que
+    $y_1+\cdots+y_n=0$. On peut écrire $y_k=M_{k,k}x_k$ pour tout
+    $k$ de sorte que pour tout $i$, on a:
+    \[0=M_{i,i}\sum_{k=1}^ny_k=\sum_{k=1}^n\delta_{i,k}M_{i,k}x_k=y_i\]
+  \item Les $F_i$ ne sont pas réduit à $\{0\}$ puisque les $M_{i,j}$
+    sont nuls, donc $\dim(F_i)=1$
+  \item {\itshape On a envie de choisir arbitrairement $v_i$ non nul
+      tel que $F_i=\vect(v_i)$ pour avoir  $(v_1,\ldots,v_n)$  une
+      base de $\K^n$ et de noter ensuite  $P$ la matrice de passage de la base 
+      canonique  à cette base, mais ça ne colle pas pour montrer
+      $M_{i,j}v_k=\delta_{j,k}v_i$, il faut être plus méticuleux !}
+    
+    On fixe arbitrairement $x\in\K^n$ non nul. Supposons que pour tout
+    $j$, il existe $k_{j}$ tel que $M_{k_j,j}x=0$. Alors pour tout
+    $i,j$, on peut écrire
+    $M_{i,j}x=\delta_{i,k_j}M_{i,k_j}M_{k_j,j}x=0$ et donc $x=I_nx=0$
+    en décomposant $I_n$ dans la base
+    $(M_{i,j})$. Il existe donc $l$ tel que pour tout $k$, on a
+    $M_{k,l}x=v_k\neq 0$ et on a $F_k=\vect(v_k)$. On obtient ainsi
+    une base $(v_1,\ldots,v_n)$ de $\K^n$.
+
+    Soit maintenant $i,j\in\llbracket 1,n\rrbracket$.
+    Pour tout $k\in\llbracket 1,n\rrbracket$, on a
+    \[M_{i,j}v_k=M_{i,j}M_{k,l}x=\delta_{j,k}M_{i,l}x
+      =\delta_{j,k}v_i\]
+    On en déduit que l'endomorphisme canoniquement associé à
+    $M_{i,j}$ est représenté par $E_{i,j}$ dans la base
+    $(v_1,\ldots,v_n)$, et en notant $P$ la matrice de passage de la
+    base canonique à cette base, on a bien $M_{i,j}=PE_{i,j}P^{-1}$.
+  \item Soit $\Phi$ un automorphisme et $(M_{i,j})$ l'image de la base
+    canonique $(E_{i,j})$. Puisque
+    $E_{i,j}=\delta_{j,k}E_{i,k}E_{k,j}$, les $M_{i,j}$ vérifient les
+    conditions de l'énoncé et il existe $P$ inversible telle que
+    $\Phi(A)=PAP^{-1}$ pour tout $A\in\M_n(\K)$, par
+    linérité. {\itshape Tous
+    les automorphismes de $\M_n(\K)$ sont donc intérieurs}.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

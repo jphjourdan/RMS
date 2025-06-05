@@ -1,0 +1,44 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1434},subtitle={IMT MP 2023},difficulty={},tags={algebre, mines-telecom, 2023}]
+  Pour $n\in\N$, on pose $I_n=\dint_0^{+\infty}t^n\e^{-t}\d t$.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer l'existence et calculer $I_n$.
+
+    Pour $(P,Q)\in (\R[X])^2$, on pose $\langle
+    P,Q\rangle=\dint_0^{+\infty}P(t)Q(t)\e^{-t}\d t$.
+  \item Montrer que $\langle\;,\;\rangle$ définit un produit scalaire
+    sur $\R[X]$.
+
+    Pour $n\in\N$ et $x>0$, on pose
+    $L_n(x)=\dfrac{e^x}{n!}\cdot\dfrac{\d^n}{\d x^n}(x^n\e^{-x})$
+    (polynôme de Laguerre).
+  \item Montrer que $L_n$ est un polynôme de coefficient dominant
+    $\dfrac{(-1)^n}{n!}$.
+  \item Montrer que $(L_n)_{n\in\N}$ est une suite de polynômes
+    orthogonaux pour le produit scalaire défini en \textbf{b)}.
+  \end{enumerate}
+  %exo 1434 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Classique. On trouve $I_n=n!$.
+  \item Pas de problème. Bien invoquer la positivité, la continuité,
+    et une quantité infinie de racines
+    pour la preuve de
+    $\langle P,P\rangle =0\implique P=0$.
+  \item Formule de Leibniz. On prouve au passage que $(L_n)_{n\in\N}$
+    est une famille échelonnée en degré.
+  \item On montre que $\langle X^k,L_n\rangle = 0$ pour $k<n$ avec une
+    IPP:
+    \[\int_0^{+\infty}x^k\dfrac{\d^n}{\d x^n}(x^n\e^{-x})\d x
+      = -k\int_0^{+\infty}x^{k-1}
+      \dfrac{\d^n}{\d x^{n-1}}(x^{n-1}\e^{-x})\d x
+      = (-1)^kk!\int_0^{+\infty}
+      \dfrac{\d^n}{\d x^{n-k}}(x^{n-k}\e^{-x})\d x
+      =0\]
+    Il s'ensuit que $L_n$ est orthogonal à
+    $\vect(1,\ldots,X^{n-1})=\R_{n-1}[X]$ pour tout $n\in\N^*$, en
+    particulier à $L_0,\ldots,L_{n-1}$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

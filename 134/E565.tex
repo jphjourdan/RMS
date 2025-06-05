@@ -1,0 +1,20 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E565},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soient $A,B\in\M_n(\R)$. Montrer que $\Ker(A)=\Ker(B)$ si et seulement
+s'il existe $P$ inversible tel que $B=PA$.
+   %exo 565 RMS 134-1
+\end{exercise}
+\begin{solution}
+  Réciproque claire car $PAX=0\eq AX=0$ en multipliant par
+  $P^{-1}$. Supposons $\Ker(A)=\Ker(B)$ et raisonnons avec les
+  endomorphismes canoniquement associés $a$ et $b$. Notons $H$ un
+  supplémentaire de $\Ker(a)=\Ker(b)$, de sorte que $a$ et $b$
+  induisent des isomorphismes $\alpha:H\to\Im(a)$ et
+  $\beta:H\to\Im(b)$. On note alors
+  $\gamma=\beta\circ\alpha^{-1}:\Im(a)\to\Im(b)$, de sorte que
+  $\beta=\gamma\circ\alpha$. $\gamma$ se prolonge en un automorphisme
+  $f$ de $\K^n$ (il suffit de compléter arbitrairement des bases de
+  $\Im(a)$ et $\Im(b)$) et on a $b=f\circ a$. En notant $P$ la matrice
+  de $f$ dans la base canonique, on a bien $B=PA$.
+\end{solution}
+\end{enonce}

@@ -1,0 +1,43 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1502},subtitle={CCINP MP 2023},difficulty={},tags={analyse, ccinp, 2023}]
+  Pour $n\in\N^*$, on pose $I_n=\dint_{0}^{+\infty}\dfrac{\d
+    x}{(1+x^3)^n}$.
+  \begin{enumerate}[\bfseries a)]
+  \item Justifier que $I_n$ est bien définie pour tout $n\ge 1$.
+  \item Montrer que $I_{n+1}=\left(1-\dfrac1{3n}\right)I_n$.
+  \item On pose $u_n=n^{1/3}I_n$. Étudier la convergence de la suite
+    $(u_n)$.
+    %{\itshape Indication: poser $v_n=\ln(u_n)$}.
+  \item Étudier la convergence de la série $\dsum I_n$.
+  \end{enumerate}
+  %exo 1502 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item L'intégrande est équivalent à $\dfrac1{x^{3n}}$ en $+\infty$,
+    intégrale de Riemann convergente.
+  \item Commençons par remarquer que l'on peut écrire:
+    \[I_n=\dint_{0}^{+\infty}\dfrac{x^3}{(1+x^3)^{n+1}}\d x+I_{n+1}\]
+    À l'aide d'une IPP, on peut obtenir:
+    \[\dint_{0}^{+\infty}\dfrac{x^3}{(1+x^3)^{n+1}}\d x
+      =\dfrac13\dint_{0}^{+\infty}\dfrac{3x^2}{(1+x^3)^{n+1}}
+      \cdot x\d x
+      = -\dfrac1{3n}\left[\dfrac{1}{(1+x^3)^n}\cdot x\right]_0^{+\infty}
+      +\dfrac1{3n}\int_0^{+\infty}\dfrac1{(1+x^3)^n}\d x\]
+    On trouve ainsi:
+    \[I_n=\dfrac1{3n}I_n+I_{n+1},\]
+    D'où la relation demandée.
+  \item La relation de récurrence précédente conduit à
+    \[u_{n+1}=\left(\dfrac{n+1}{n}\right)^{1/3}\left(1-\dfrac1{3n}\right)u_n\]
+    On pose $v_n=\ln(u_n)$, de sorte que:
+    \[v_{n+1}-v_n=\dfrac13\ln\left(1+\dfrac1{n}\right)+\ln\left(1-\dfrac1{3n}\right)
+      = \O\left(\dfrac1{n^2}\right)\]
+    Cela prouve l'absolue convergence, donc la convergence, de la
+    série $\sum (v_{n+1}-v_n)$, et donc la convergence de la suite
+    $(u_n)$ vers une limite $\ell>0$.
+  \item D'après ce qui précède, on a $I_n\sim\dfrac{\ell}{n^{1/3}}$, et
+      la série positive $\sum I_n$ est donc divergente par comparaison
+      à une série de Riemann divergente.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

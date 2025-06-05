@@ -1,0 +1,48 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1386},subtitle={CCINP MP 2023},difficulty={},tags={algebre, ccinp, 2023}]
+  Soit $P\in\R[X]$ un polynôme unitaire de degré $n\in\N^*$, à
+ coefficients dans $\{-1,0,1\}$. On suppose que $P(0)\neq 0$ et que
+ $P$ est scindé sur $\R$, et on note $x_1,\ldots,x_n$ ses racines. On
+ note également $\sigma_1=\dsum_{i=1}^nx_i$,
+ $\sigma_2=\dsum_{1\le i,j\le n}x_ix_j$ et
+ $\sigma_n=\dprod_{i=1}^nx_i$.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que
+   $\ln\left(\dfrac1{n}\dsum_{i=1}^nx_i^2\right)\ge
+   \dfrac1{n}\dsum_{i=1}^n\ln(x_i^2)$, puis que
+   $\left(\dprod_{i=1}^nx_i^2\right)^{1/n}\le
+   \dfrac1{n}\dsum_{i=1}^nx_i^2$.
+ \item Quelles sont les valeurs possibles de $\sigma_1, \sigma_2,
+   \sigma_n$ ?
+ \item Montrer que $\dsum_{i=1}^nx_i^2\le 3$.
+ \item Déterminer tous les polynômes $P\in\R[X]$ scindés sur $\R$ et à
+   coefficients dans $\{-1,0,1\}$.
+ \end{enumerate}
+  %exo 1386 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Concavité de $\ln$, inégalité de Jensen.
+  \item Avec les relations de Viète, $\sigma_i\in\{-1,0,1\}$, mais
+    $\sigma_n\neq 0$ puisque $P(0)\neq 0$.
+  \item $\sigma_1^2=\dsum_{i=1}^nx_i^2+2\sigma_2$, d'où
+    $\dsum_{i=1}^nx_i^2\le \sigma_1^2+2|\sigma_2|\le 3$ par inégalité
+    triangulaire.
+  \item Soit $Q$ un tel polynôme, qu'on peut écrire $Q=\pm X^dP$ avec
+    $P$ unitaire vérifiant
+    $P(0)\neq 0$. En reprenant les notations des questions précédentes
+    pour $P$, on a d'après les questions \textbf{a)} et \textbf{b)}:
+    \[1=\sigma_n^{\frac2{n}}\le\dfrac{1}n\dsum_{i=1}^nx_i^2\le\dfrac3{n},\]
+    et donc $n\le 3$. En reprenant la question \textbf{c)}, on voit
+    que le cas $n=3$ nécessite $\sigma_1=\pm 1$ et $\sigma_2=-1$, ce
+    qui implique $P=X^3\pm X^2-X\pm 1$. Une petite étude de variations
+    (y a-t-il plus simple ?) montre que seuls
+    $X^3-X^2-X+1=(X+1)(X-1)^2$ et $X^3+X^2-X-1=(X+1)^2(X-1)$ sont
+    scindés. Le cas $n=2$ ne donne que $X^2-1=(X+1)(X-1)$ et
+    $X^2\pm X-1$. Enfin pour $n=1$ on a bien sûr $X\pm 1$. Les
+    polynômes qui conviennent sont donc de la forme 
+    $\pm X^d(X+1)^k(X-1)^l$ avec $(k,l)\in \{(1,2), (2,1), (1,1), (1,0),
+    (0,1)\}$, et  $\pm X^d(X^2\pm X-1)$. 
+  \end{enumerate}
+\end{solution}
+\end{enonce}

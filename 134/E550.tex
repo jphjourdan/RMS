@@ -1,0 +1,72 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E550},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soit $A=
+\begin{pmatrix}
+  1 & 1 & 0 & \cdots & 0\\
+  0 & \ddots & \ddots & \ddots & \vdots\\
+  \vdots & \ddots & \ddots & \ddots & 0\\
+  \vdots & & \ddots & \ddots & 1\\
+  0 & \cdots & \cdots & 0 & 1
+\end{pmatrix}$ et $N=A-I_n$. Soit $(E)$ l'équation matricielle $X^2=A$.
+\begin{enumerate}[\bfseries a)]
+\item Quelles sont les matrices qui commutent avec $N$ ?
+\item Montrer que les solutions de $(E)$ sont de la forme
+  $X=\pm
+  \begin{pmatrix}
+    1 & a_1 & \cdots & a_{n-1}\\
+    0 & \ddots & \ddots & \vdots\\
+    \vdots & \ddots & \ddots & a_1\\
+    0 & \cdots & 0 & 1
+  \end{pmatrix}$.
+
+  Montrer qu'il y a au plus deux solutions.
+\item Rappeler le développement limité à l'ordre $n$ de
+  $x\mapsto\sqrt{1+x}$. Résoudre $(E)$.
+\end{enumerate}
+   %exo 550 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Pour $B=(b_{i,j})$ on a $[BN]_{i,j}=b_{i,j-1}$ ($0$ si $j=1$) et
+    $[NB]_{i,j}=b_{i+1,j}$ ($0$ si $i=n$). $BN=NB$ implique donc d'une
+    part que $B$ est constante sur ses diagonales, et d'autre part
+    (par une récurrence qu'il faudrait mettre en place) qu'elle est
+    triangulaire supérieure. Les matrices qui commutent avec $N$ sont
+    donc de la forme
+    $\begin{pmatrix}
+    a_0 & a_1 & \cdots & a_{n-1}\\
+    0 & \ddots & \ddots & \vdots\\
+    \vdots & \ddots & \ddots & a_1\\
+    0 & \cdots & 0 & a_0
+  \end{pmatrix}$.
+  \item Si $B$ est solution de $(E)$, on a $B^2=N+I_n$ donc
+    $BN+B=B^3=NB+B$ ce qui prouve déjà que $B$ est de la forme
+    précédente. Mais on doit avoir de plus $a_0^2=1$ et on a donc
+    $a_0=\pm 1$. Quitte à changer $a_i en -a_i$ pour $i\ge 1$ dans le
+    cas $a_0=-1$, on a bien $B$ de la forme voulue. Notons maintenant
+    que pour $i<j$, on a, en notant $a_0=1$:
+    \[[B^2]_{i,j}=\dsum_{k=1}^nb_{i,k}b_{k,j}=\dsum_{k=i}^ja_{k-i}a_{j-k}
+      = 2a_{j-i}+\dsum_{k=i+1}^{j-1}a_{k-i}a_{j-k}\]
+    On en déduit $a_1=\dfrac12$ et pour tout $p\ge 2$ (on a posé
+    $p=j-i$ et décalé les indices)
+    \[a_p=-\dfrac12\dsum_{k=1}^{p-1}a_ka_{p-k}\]
+    Cela prouve par récurrence que les $a_i$ sont uniques et qu'il y a
+    donc au plus deux solutions pour l'équation $(E)$.
+  \item On retrouve (péniblement ?):
+    \[\sqrt{1+x}=\sum_{k=0}^n\dfrac{(-1)^{k+1}}{(2k-1)2^{2k}}\combi{2k}{k}x^k
+      +\o(x^n)\]
+   Inspiré par cette écriture, il reste à justfier correctement qu'en
+   posant
+   \[B=\sum_{k=0}^n\dfrac{(-1)^{k+1}}{(2k-1)2^{2k}}\combi{2k}{k}N^k,\]
+   c'est-à-dire $B=\begin{pmatrix}
+     a_0 & a_1 & \cdots & a_{n-1}\\
+     0 & \ddots & \ddots & \vdots\\
+     \vdots & \ddots & \ddots & a_1\\
+     0 & \cdots & 0 & a_0
+   \end{pmatrix}$, avec
+   $a_k=\dfrac{(-1)^{k+1}}{(2k-1)2^{2k}}\combi{2k}{k}$ (on retrouve
+   notamment $a_0=1$ et $a_1=\dfrac12$), on a $B^2=I_n+N=A$, et donc que
+   $\pm B$ sont les deux solutions de $(E)$.   
+  \end{enumerate}
+\end{solution}
+\end{enonce}

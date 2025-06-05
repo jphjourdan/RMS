@@ -1,0 +1,50 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E518},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soient $p$ un nombre premier et $C_p$ l'ensemble des $z\in\C$ tels
+  qu'il existe $n\in\N$ vérifiant $z^{p^n}=1$.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer que $C_p$ est un sous-groupe infini de $\C^*$.
+  \item Déterminer les sous-groupes de $C_p$.
+  \end{enumerate}
+  %exo 518 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Noter que si $z^{p^n}=1$ alors $z^{p^{n+1}}=(z^{p^n})^p=1$ et
+    donc $z^{p^m}=1$ pour tout $m\ge n$. On montre alors facilement la
+    stabilité de $C_P$ pour le produit et passage à l'inverse. En
+    notant $\omega_n=\e^{\frac{2i\pi}{p^n}}$, on a $\Omega=\{\omega_n,
+    n\in\N\}\subset C_p$, qui est donc bien infini.
+  \item Soit $G$ un sous-groupe de $C_p$, différent de
+    $\{1\}$. Remarquons que tout élément $\neq 1$ de $C_p$, donc tout
+    élément $\neq 1$ de $G$, est de de la forme 
+    $\omega_n^k$, pour un certain $n\in\N^*$ et $0<k<p^n$ ($C_p$ est
+    en fait engendré par les $\omega_n$). Remarquons également que si
+    $\omega_n\in G$, alors pour $0\le m\le n$, on a
+    $\omega_m=\omega_n^{p^{n-m}}\in G$. Définissons
+    alors l'ensemble non vide
+    $E=\{\theta\in]0,2\pi[, \e^{i\theta}\in G\}$ et notons $\theta$ sa
+    borne inférieure. Deux cas se présentent:
+    \begin{itemize}
+    \item $\theta=0$. Dans ce cas, fixons $n\in\N^*$. Il doit exister
+      alors $\theta\in E$ tel que $\theta<\dfrac{2\pi}{p^n}$, et on
+      peut écrire $\theta=\dfrac{2k\pi}{p^m}$, avec $m,k\in\N^*$, $k$
+      et $m$ premiers entre eux, de sorte que
+      \[0<\dfrac{k}{p^m}<\dfrac{1}{p^n}\]
+      On en déduit facilement (Bézout) que $\omega_m \in G$, et donc
+      $\omega_n\in G$. Il en résulte alors $G=C_p$.
+    \item $\theta>0$. Par caractérisation séquentielle de la borne
+      inférieure et continuité de l'exponentielle complexe, on en
+      déduit $\theta\in E$. $\theta$ peut alors s'écrire
+      $\dfrac{2k\pi}{p^n}$ pour un certain $k,n\in\N^*$, avec $k$ et
+      $p^n$ premiers entre eux. Avec le même raisonnement que
+      précédemment (Bézout), on a en fait $k=1$, et cela prouve au
+      final $\U_{p^n}\subset G$. On montre l'inclusion réciproque en
+      considérant $\omega_m^k\in G$, avec $k$ et $p^m$ premiers entre
+      eux, en remarquant qu'on alors nécessairement $\omega_m\in G$, 
+      donc $m\le n$ (par caractère minimal de $\theta$) et donc
+      $\omega_m^k=\omega_n^{kp^{n-m}}\in\U_{p^n}$.
+    \end{itemize}
+  \end{enumerate}
+\end{solution}
+\end{enonce}

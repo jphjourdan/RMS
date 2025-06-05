@@ -1,0 +1,26 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1488},subtitle={CCINP MP 2023},difficulty={},tags={analyse, ccinp, 2023}]
+  On pose, pour tous $n\in\N^*$ et $t\in [0,1]$,
+  $g_n(t)=\e^t\left(1-\dfrac{t}{n}\right)^n$.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que: $\forall (t,n)\in[0,1]\times \N^*,
+   \;|g_n'(t)|\le \dfrac{\e^t}{n}$.
+ \item Montrer que: $\forall (t,n)\in[0,1]\times \N^*,
+   \;\left|\e^{-t}-\left(1-\dfrac{t}{n}\right)^n\right|\le
+   \dfrac{t}{n}$
+ \item Étudier la convergence simple et uniforme sur $[0,1]$ de la
+   suite de fonctions $(G_n)_{n\in\N^*}$ définie par
+   $G_n:x\in[0,1]\mapsto\dint_0^xg_n(t)\d t$.
+ \end{enumerate}
+ %exo 1488 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item On a
+    $g_n'(t)=-\dfrac{\e^{t}}{n}\left(1-\dfrac{t}{n}\right)^{n-1}$.
+  \item On majore $|g_n(t)-g_n(0)|$ en intégrant l'inégalité
+    précédente, et on multiplie par $\e^{-t}$.
+  \item On majore $|G_n(x)-x|=\left|\dint_0^x(g_n(t)-1)\d g\right|$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

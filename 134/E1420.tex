@@ -1,0 +1,32 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1420},subtitle={CCINP MP 2023},difficulty={},tags={algebre, ccinp, 2023}]
+  Soient $n\in\N^*$, $(\lambda,\mu)\in{\C^*}^2$, $(M,A,B)\in\M_n(\C)^3$
+ telles que $A+B=I_n$, $M=\lambda A+\mu B$, $M^2=\lambda^2A+\mu^2B$.
+ \begin{enumerate}[\bfseries a)]
+ \item Déterminer $M^2-(\lambda+\mu)M+2\lambda\mu I_n$.
+ \item Montrer que $M$ est inversible et calculer $M^{-1}$.
+ \item Si $\lambda\neq \mu$, Montrer que $A$ et $B$ sont des matrices
+   de projecteurs.
+ \item La matrice $M$ est-elle diagonalisable ? Déterminer son
+   spectre.
+ \end{enumerate}
+  %exo 1420 RMS 134-1, l'exo ne supposait pas $\lambda\neq \mu$, ce
+  %qui pose problème pour la question c)
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item On trouve facilement $\lambda\mu I_n$. On peut en déduire dès
+    à présent que $X^2-(\lambda+\mu)M+\lambda\mu$, dont les racines
+    sont $\lambda$ et $\mu$, est annulateur de $M$.
+  \item On a $\lambda\mu I_n=M((\lambda+\mu)I_n-M)$, on conclut
+    facilement.
+  \item En utilisant les deux premières relations, on obtient:
+    \[A=\dfrac1{\lambda-\mu}(M-\mu I_n)\qquad\text{et donc}\qquad
+      A^2=\dfrac1{(\lambda-\mu)^2}(M^2-2\mu M+\mu^2I_n)\]
+    En remplaçant $M^2$ par $(\lambda+\mu)M-\lambda\mu I_n$, on
+    obtient bien $A^2=A$. Même principe pour $B^2=B$.
+  \item Oui, si $\lambda\neq \mu$, on a un polynôme annulateur scindé
+    à racines simples, sinon on a $M=\lambda(A+B)=\lambda I_n$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

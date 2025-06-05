@@ -1,0 +1,22 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E557},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soit $n\in\N^*$. Calculer $\det((i\wedge j)_{1\le i,j\le n})$.
+
+  Indication: On rappelle que pour $N\in\N^*$,
+  $N=\dsum_{d|N}\varphi(d)$ où $\varphi$ est l'indicatrice d'Euler.
+   %exo 557 RMS 134-1
+\end{exercise}
+\begin{solution}
+  En notant $M=(i\wedge j)_{1\le i,j\le n})$,
+  $D=\mathrm{diag}(\varphi(1),\ldots,\varphi(n)$ et $A=(a_{i,j})$ avec
+  $a_{i,j}=1$ si $i|j$ et $0$ sinon, on peut montrer que
+  $M=A^TDA$. En effet, $[DA]_{k,j}=\varphi(k)$ si $k|j$, $0$ sinon,
+  tandis que $[A^T]_{i,k}=1$ si $k|i$, $0$ sinon, de sorte que dans la
+  somme $[A^TDA]_{i,j}=\dsum_{k=1}^n[A^T]_{i,k}[DA]_{k,j}$, le
+  $k$-ième terme est $\varphi(k)$ ssi $k|i$ et $k|j$ donc ssi
+  $k|(i\wedge j)$, $0$ sinon. On a donc exactement
+  $[A^TDA]_{i,j}=i\wedge j$ d'après la formule rappelée. $A$ étant
+  triangulaire à coefficients diagonaux $=1$, on a
+  $\det(M)=\det(D)=\dprod\varphi(i)$.
+\end{solution}
+\end{enonce}

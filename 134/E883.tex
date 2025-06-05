@@ -1,0 +1,28 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E883},subtitle={Oral Mines-Ponts},difficulty={},tags={probas, mines-ponts, 2023}]
+  Soit $p\in]0,1[$. Dans un sac contenant $n$ jetons numérotés de $1$ à
+ $n$, on tire $S$ jetons où $S$ est une variable aléatoire suivant une
+ loi binomiale de paramètre $n$ et $p$. Quelle est la probabilité
+ d'obtenir des jetons de numéros consécutifs?
+  %exo 883 RMS 134-1
+\end{exercise}
+\begin{solution}
+  En notant $A$ cet événement, la probalité $\P(A|S=k)$ s'évalue en
+  considérant comme univers $\Omega_k$ l'ensemble des parties de
+  $\llbracket 1,n\rrbracket$ à $k$ éléments et en dénombrant
+  l'ensemble des éléments de $\Omega_k$ constitués de nombres
+  consécutifs. Pour $k\ge 1$, il y en a exactement $n-k+1$, et
+  on trouve \[\P(A|S=k)=\dfrac{n-k+1}{\combi{n}{k}}.\]
+  On a le cas particulier $\P(A|S=0)=0$ et la formule des probabilités
+  totales donne donc finalement
+  \[\P(A)=\dsum_{k=0}^n\P(A|S=k)\P(S=k)=\dsum_{k=1}^n(n-k+1)p^k(1-p)^{n-k}
+    =(1-p)^n\dsum_{k=1}^n(n-k+1)r^k,\]
+  avec $r=\dfrac{p}{1-p}$. Considérons alors
+  $f:x\mapsto\dfrac{x^{n+1}-x}{x-1}=\dsum_{k=1}^nx^k$, dérivable sur
+  $]0,1[$, de dérivée:
+  \[f'(x)=\dsum_{k=1}^nkx^{k-1}=\dfrac{nx^{n+1}-(n+1)x^n+1}{(x-1)^2}\]
+  On a alors:
+  \[\dsum_{k=1}^n(n-k+1)r^k=(n+1)f(r)-rf'(r)=\dfrac{r^{n+2}-(n+1)r^2+nr}{(r-1)^2},\]
+  ce qui donne un résultat final pas très drôle.
+\end{solution}
+\end{enonce}

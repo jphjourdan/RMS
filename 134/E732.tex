@@ -1,0 +1,37 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E732},subtitle={Mines-Ponts MP 2023},tags={analyse, mines-ponts, 2023},difficulty={}]
+  Pour toute permutation $f\in\N^*$, on note
+  $E_f=\left\{\alpha\in\R, \dsum\dfrac{f(n)}{n^\alpha}<+\infty\right\}$.
+    \begin{enumerate}[\bfseries a)]
+    \item Montrer qu'il existe $f\in\mathcal{S}(\N^*)$ tel que
+      $E_f=\emptyset$.
+    \item Soit $f\in\mathcal{S}(\N^*)$. Montrer que si
+      $E_f\neq\emptyset$, alors c'est un intervalle minoré par $2$ et
+      non majoré.
+    \item Montrer que, si $\beta>2$, alors il existe
+      $f\in\mathcal{S}(\N^*)$ tel que $E_f=]\beta,+\infty[$.
+    \end{enumerate}
+  %exo 732 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Notons $A=\{2^n, n\in\N^*\}$ et $B=\N^*\setminus
+    A=\{u_n,n\in\N^*\}$ ($B$ étant bien sûr dénombrable). On pose
+    $f(2n)=2^n$ et $f(2n-1)=u_n$ pour tout $n\in\N^*$, ce qui définit
+    bien $f\in\mathcal{S}(\N^*)$. Pour $\alpha\in\R$, on a
+    $\dsum\dfrac{f(n)}{n^\alpha}>\dsum_{n=1}^{+\infty}\dfrac{2^n}{(2n)^{\alpha}}=+\infty$.
+  \item Il suffit de montrer que $\dsum\dfrac{f(n)}{n^2}=+\infty$. En
+    effet, on aura alors $\alpha<2\implique \alpha\notin E_f$ par
+    comparaison des séries positives, et $\alpha\in E_f\implique
+    [\alpha,+\infty[\subset E_F$, toujours par comparaison. Pour
+    $n\in\N$, on a nécessairement:
+    \[\sum_{k=2^n+1}^{2^{n+1}}f(k)\ge \sum_{k=1}^{2^n}k\ge 2^{2n-1}\]
+    On en déduit la minoration:
+    \[\sum_{k=2^n+1}^{2^{n+1}}\dfrac{f(k)}{k^2}\ge
+      \dfrac{2^{2n-1}}{2^{2n}}=\dfrac12\]
+    Il en résulte facilement le résultat annoncé par sommation par
+    critère de Cauchy ou sommation par paquets.
+  \item Pas encore cherché ...
+  \end{enumerate}
+\end{solution}
+\end{enonce}

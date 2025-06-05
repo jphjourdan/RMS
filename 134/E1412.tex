@@ -1,0 +1,43 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1412},subtitle={IMT MP 2023},difficulty={},tags={algebre, mines-telecom, 2023}]
+  Soit $E$ un $\C$-espace vectoriel, $u\in\Lin(E)$ diagonalisable,
+  $e=(e_1,\ldots,e_n)$ une base de vecteurs propres.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer que $\chi_u(u)=0$ sans utiliser le théorème de
+    Cayley-Hamilton.
+  \item On écrit $x=\dsum_{i=1}^nx_ie_i$. Calculer
+    $\det_e\big(x,u(x),\ldots,u^{n-1}(x)\big)$.
+  \end{enumerate}
+  %exo 1412 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Dans la base $e$, $u$ est représentée par une matrice
+    diagonale $\diag(\lambda_1,\ldots,\lambda_n)$, de sorte que
+    $\chi_u(u)$ est représentée par
+    $\diag(\chi_u(\lambda_1),\ldots,\chi_u(\lambda_n))$.
+  \item les composantes de $u^k(x)$ dans $e$ sont
+    $(x_1\lambda_1^k,\ldots, x_n\lambda_n^k)$. On a donc
+    \[
+      \Mat{e}\big(x,u(x),\ldots,u^{n-1}(x)\big)
+      =
+      \begin{pmatrix}
+        x_1 & \ldots & x_1\lambda_1^{n-1}\\
+        \vdots & \ddots & \vdots\\
+        x_n & \ldots & x_n\lambda_n^{n-1}
+      \end{pmatrix}
+    \]
+    La linéarité ligne par ligne du déterminant permet de le
+    factoriser ici par le produit des $x_i$, et apparait alors un
+    déterminant de Vandermonde:
+    \[\det_e\big(x,u(x),\ldots,u^{n-1}(x)\big)=
+      \prod_{i=1}^nx_i
+      \begin{vmatrix}
+        1 & & \ldots & \lambda_1^{n-1}\\
+        \vdots & \ddots & \vdots\\
+        1 & \ldots & \lambda_n^{n-1}
+      \end{vmatrix}=
+      \prod_{i=1}^nx_i\prod_{1\le i<j\le n}(\lambda_j-\lambda_i)\]
+  \end{enumerate}
+\end{solution}
+\end{enonce}

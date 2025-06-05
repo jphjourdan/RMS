@@ -1,0 +1,27 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E554},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  %% coquille dans l'énoncé qui n'imposait pas $a\in\Ker(h)$
+  %% remarque: la définition donnée exclu le cas $h=id$, censé
+  %% correspondre tout de même à une transvection normalement (voir
+  %% wikipedia)
+Soit $E$ un $\K$-espace vectoriel de dimension finie. On dit que
+$h\in\Lin(E)$ est une transvection s'il existe $\varphi\in\Lin(E,\K)$
+non nulle et $a\in \Ker(\varphi)$ non nul tels que: $\forall x\in
+E,h(x)=x+\varphi(x)a$. Soit $u\in\Lin(E)$ tel que $\rg(u-id)=1$ et
+$(u-id)^2=0$. Montrer que $u$ est une transvection. La réciproque
+est-elle vraie?
+   %exo 554 RMS 134-1
+\end{exercise}
+\begin{solution}
+  Soit $a\neq 0$ dans $\Im(u-id)$ de sorte qu'on peut écrire
+  $(u-id)(x)=\varphi(x)a$ pour tout $x\in E$, ce qui définit une forme
+  linéaire $\varphi$ telle que $u(x)=x+\varphi(x)a$ pour tout $x$.
+  On a alors $(u-id)^2(x)=(u-id)(\varphi(x)a)=\varphi(x)\varphi(a)a=0$
+  pour tout $x$ ce qui prouve $\varphi(a)=0$.
+
+  Réciproquement, soit une transvection $u=id+\varphi(\cdot)a$. On a
+  $u-id\subset\vect(a)$ et $u-id\neq 0$ puisque $\varphi\neq 0$, donc
+  $\rg(u-id)=1$. Avec de plus $a\in\Ker(\varphi)$, on a comme
+  précédemment $(u-id)^2(x)=\varphi(x)\varphi(a)a=0$ pour tout $x$.
+\end{solution}
+\end{enonce}

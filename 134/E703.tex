@@ -1,0 +1,45 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E703},subtitle={Mines-Ponts MP 2023},tags={analyse, mines-ponts, 2023},difficulty={}]
+  Pour tout $n\ge 2$, on pose $f_n(x)=x^n-nx+1$.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que l'équation $f_n(x)=0$ admet une unique solution
+   $x_n$ dans $[0,1]$.
+ \item Étudier la monotonie de la suite $(x_n)$. Montrer sa
+   convergence.
+ \item Déterminer la limite de la suite $(x_n)$ et un équivalent
+   simple de $x_n$.
+ \item Déterminer un développement asymptotique à deux termes de
+   $x_n$.
+ \end{enumerate}
+  %exo 703 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item $f_n'(x)=n(x^{n-1}-1)$ donne la décroissance de $f_n$ sur
+    $[0,1]$. Avec $f(0)=1$ et $f(1)=2-n$, le TVI assure l'existence et
+    l'unicité de $x_n\in[0,1]$ tel que $f_n(x_n)=0$.
+  \item En utilisant $x_n^n-nx_n+1=0$, on a
+    \[f_{n+1}(x_n)=x_n^{n+1}-(n+1)x_n+1=x_n^{n}(x_n-1)-x_n\le 0,\]
+    et la décroissance de $f_{n+1}$ donne $x_{n+1}\le x_n$, puisque
+    $f_{n+1}(x_{n+1})=0$.
+  \item On a $0\le nx_n=x_n^n+1\le 2$, d'où $x_n\to 0$. À partir d'un
+    certain rang, $x_n\le \dfrac12$, et donc
+    \[0\le nx_n-1=x_n^n\le \dfrac1{2^n}\to 0\]
+    On en déduit $nx_n\to 1$ et donc $x_n\sim\dfrac1{n}$.
+  \item On peut affiner ce qui précéde et écrire qu'à partir d'un
+    certain rang, on a:
+    \[0\le n^2x_n-n\le \dfrac{n}{2^n}\to 0,\text{ par croissance
+        comparée.}\]
+    Il en résulte $nx_n-1=\o\left(\dfrac1{n}\right)$, ce qui permet
+    d'écrire:
+    \[0\le
+      nx_n-1=\dfrac1{n^n}(nx_n)^n=\dfrac1{n^n}\left(1+\o\left(\dfrac1{n}\right)\right)^n\]
+    Or, on a:
+    \[\left(1+\o\left(\dfrac1{n}\right)\right)^n=
+      \exp\left[n\ln\left(1+\o\left(\dfrac1{n}\right)\right)\right]
+      =\exp\big(\o(1)\big)\to 1\]
+    On en déduit que $nx_n-1\sim\dfrac1{n^n}$ et on a finalement:
+    \[x_n=\dfrac1{n}+\dfrac1{n^{n+1}}+\o\left(\dfrac1{n^{n+1}}\right)\]
+  \end{enumerate}
+\end{solution}
+\end{enonce}

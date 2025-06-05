@@ -1,0 +1,32 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E564},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soit $f:\M_n(\K)\to\K$ non constante telle que: $\forall
+A,B\in\M_n(\K)$, $f(AB)=f(A)f(B)$. Montrer que $A\in\GL_n(\K)\eq
+f(A)\neq 0$.
+   %exo 564 RMS 134-1
+\end{exercise}
+\begin{solution}
+  On a déjà $f(I_n)$ solution de $x^2=x$, donc $f(I_n)=1$ car le cas
+  $f(I_n)=0$ implique $f$ nulle. Si $A$ inversible, $1=f(A)f(A^{-1})$
+  donc $f(A)\neq 0$. Montrons maintenant que $f(A)=0$ pour tout
+  $A\notin\GL_n(\K)$. On a déjà $f(0)=0$ car $f(0)$ vérifie aussi
+  $x^2=x$ et $f(0)=1$ implique $f=1$. Notons $E_r$ l'ensemble des
+  matrices de rang $r$. Si $A\in E_r$, il existe $P,Q\in\GL_n(\K)$
+  tels que $A=PJ_rQ$, donc $f(A)=f(P)f(J_r)f(Q)$ et donc $f(A)=0\eq
+  f(J_r)=0$, de sorte que pour tout $r$, on a soit
+  $f(E_r)\subset\{0\}$, soit $f(E_r)\subset\K\setminus\{0\}$.
+  Soit $r\ge 1$ le plus petit entier tel que $f(J_r)\neq 0$. Notons
+  $J_r'=I_n-J_{n-r}=
+  \begin{pmatrix}
+    (0) & (0)\\
+    (0) & I_r
+  \end{pmatrix}
+  $. $J_r'\in E_r$ donc
+  $f(J_rJ_r')=f(J_r)f(J_r')\neq 0$. Si $r\le n/2$, $J_rJ_r'$ est
+  nulle, absurde. Sinon $J_rJ_r'$ est diagonale avec exactement $2r-n$
+  $1$ sur la diagonale (du rang $n-r+1$ au rang $r$) et de donc de
+  rang $2r-n$. La définition de $r$ implique alors $2r-n\ge r$ et donc
+  $r=n$: seules les matrices inversibles ont donc une image non nulle
+  par $f$.
+\end{solution}
+\end{enonce}

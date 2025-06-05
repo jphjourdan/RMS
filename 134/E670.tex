@@ -1,0 +1,19 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E670},subtitle={Mines-Ponts MP 2023},tags={analyse, mines-ponts, 2023},difficulty={}]
+  Déterminer les sous-groupes compacts de $\C^*$.
+  %exo 670 RMS 134-1
+\end{exercise}
+\begin{solution}
+  Soit $G$ un tel sous-groupe et $z\in G$. On a nécessairement $|z|=1$
+  sinon $(z^n)_{n\in\Z}$ n'est pas bornée. On a donc déjà $G\subset
+  \U$. Soit
+  $E=\{\theta\in\R, \e^{i\theta}\in G\}$. $E$ est un sous-groupe
+  de $\R$, donc dense ou de la forme $\theta\Z$, avec $\theta>0$. Dans
+  le premier cas $G=\exp(iE)$ est dense dans $\U$ donc $G=\U$ car $G$
+  fermé. Dans le second cas, on note $n=\lceil 2\pi/\theta\rceil$ de
+  sorte que $(n-1)\theta <2\pi\le n\theta$. Si $2\pi<n\theta$, on a
+  $0<\theta-2\pi<\theta$ et $\e^{i\theta-2i\pi}=\e^{i\theta}\in G$
+  contredit la définition de $\theta$. On a alors
+  $\theta=\dfrac{2\pi}{n}$ et $G=\U_n$.
+\end{solution}
+\end{enonce}

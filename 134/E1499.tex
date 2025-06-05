@@ -1,0 +1,54 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1499},subtitle={CCINP MP 2023},difficulty={},tags={analyse, ccinp, 2023}]
+  \begin{enumerate}[\bfseries a)]
+  \item Étudier la convergence simple de la série entière $\dsum_{n\ge
+      1}\sin\left(\dfrac1{\sqrt{n}}\right)x^n$. On note $D$ l'ensemble
+    de convergence et $S(x)$ la somme sur $D$. L'application $S$
+    est-elle continue sur $D$ ?
+  \item Montrer que $\dsum_{n\ge
+      2}\left(\sin\dfrac1{\sqrt{n}}-\sin\dfrac1{\sqrt{n-1}}\right)x^n$
+    converge normalement sur $[-1,1]$.
+  \item En déduire la valeur de $\dlim_{x\to 1^-}(1-x)S(x)$.
+  \end{enumerate}
+  %exo 1499 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item On a $\sin\left(\dfrac1{\sqrt{n}}\right)\sim n^{-\frac12}$
+    quand $n\to +\infty$ et on sait d'après le cours que toute série
+    entière de la forme $\sum n^{\alpha}x^n$ admet $1$ comme rayon de
+    convergence. La série diverge pour $x=1$ et converge pour $x=-1$
+    (critère spécial des séries alternées) de sorte que $D=[-1,1[$. La
+    continuité de $S$ sur $]-1,1[$ est assurée par la convergence
+    normale sur tout segment de cet intervalle, tandis que la
+    continuité en $-1$ résulte du théorème d'Abel radial: $S$ est bien
+    continue sur $D$.
+  \item Pour $n\ge 2$, on a:
+    \[\sup_{x\in [0,1]}\left|\left(\sin\dfrac1{\sqrt{n}}
+          -\sin\dfrac1{\sqrt{n-1}}\right)x^n\right|=
+      \sin\dfrac1{\sqrt{n-1}}-\sin\dfrac1{\sqrt{n}},\]
+    terme général d'une série telescopique convergente, ce qui nous
+    donne donc la convergence normale souhaitée.
+  \item Pour $x\in ]-1,1[$, on a:
+    \begin{align*}
+      (1-x)S(x)
+      &=\sum_{n=1}^{+\infty}\sin\left(\dfrac1{\sqrt{n}}\right)x^n-
+      \sum_{n=1}^{+\infty}\sin\left(\dfrac1{\sqrt{n}}\right)x^{n+1}\\
+      &=\sum_{n=1}^{+\infty}\sin\left(\dfrac1{\sqrt{n}}\right)x^n-
+        \sum_{n=2}^{+\infty}\sin\left(\dfrac1{\sqrt{n-1}}\right)x^n\\
+      &= \sin(1)x^n+\sum_{n=2}^{+\infty}
+        \left(\sin\dfrac1{\sqrt{n}}
+        -\sin\dfrac1{\sqrt{n-1}}\right)x^n
+    \end{align*}
+    On reconnait l'expression de la somme de la série de la question
+    précédente, dont la convergence normale sur $[-1,1]$ nous garantit la
+    continuité en $1$ et nous permet de passer à la limite et
+    d'obtenir:
+    \[\dlim_{x\to 1^-}(1-x)S(x)=
+      \sin(1)+\sum_{n=2}^{+\infty}
+        \left(\sin\dfrac1{\sqrt{n}}
+          -\sin\dfrac1{\sqrt{n-1}}\right)
+        =\sin(1)-\sin(1)=0\]
+  \end{enumerate}
+\end{solution}
+\end{enonce}

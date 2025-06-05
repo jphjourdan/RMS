@@ -1,0 +1,33 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E558},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soit $A\in\M_n(\C)$ nilpotente.
+\begin{enumerate}[\bfseries a)]
+\item Calculer $\det(A+I_n)$.
+\item Soit $M\in\M_n(\C)$ telle que $AM=MA$. Calculer $\det(A+M)$. On
+  commencera par le cas où $M\in\GL_n(\C)$.
+\item Le résultat est-t-il toujours vrai si $AM\neq MA$ ?
+\end{enumerate}
+   %exo 558 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item $A+I_n$ a pour spectre $\{1\}$ donc
+    $\det(A+I_n)=1$.
+  \item Si $A\in\GL_n(\C)$, on a $AM^{-1}=M^{-1}A$ et $AM^{-1}$ est
+    donc nilpotente, d'où
+    $\det(A+M)=\det(AM^{-1}+I_n)\det(M)=\det(M)$. Cette égalité se
+    prolonge au cas $M\notin\GL_n(\C)$ par densité de $\GL_n(\C)$ dans
+    $\M_n(\C)$ et continuité du déterminant.
+
+    {\itshape N'y a-t-il pas une façon plus directe de montrer que
+      $\det(A+M)=0$ lorsque $A$ nilpotent et $M$ non inversible ?}
+  \item Contre-exemple avec $A=
+    \begin{pmatrix}
+      0 & 1 \\ 0 & 0
+    \end{pmatrix}$ et $M=
+    \begin{pmatrix}
+      1 & 0 \\ 1 & 1
+    \end{pmatrix}$
+  \end{enumerate}
+\end{solution}
+\end{enonce}

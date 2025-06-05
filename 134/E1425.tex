@@ -1,0 +1,37 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1425},subtitle={IMT MP 2023},difficulty={},tags={algebre, mines-telecom, 2023}]
+  Soient $A,B\in \M_n(\C)$ et $(E)$ l'équation $AM=MB$.
+  \begin{enumerate}[\bfseries a)]
+  \item On suppose que $(E)$ admet une solution $M\neq 0$. Montrer que
+    pour tout $P\in\C[X]$, $P(A)M=MP(B)$. Montrer que $A$ et $B$
+    admettent une valeur propre commune.
+  \item Établir la réciproque.
+  \end{enumerate}
+  %exo 1425 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Une récurrence prouve aisément $A^kM=MB^k$ pour tout $k\in\N$,
+    et on en déduit $P(A)M=MP(B)$ pour tout polynôme $P$, par
+    distributivité du produit matriciel. Avec en particulier le
+    polynôme minimal $\mu_A$ de $A$, on obtient $M\mu_A(B)=0$. $B$
+    étant trigonalisable, il existe une matrice $P$ inversible et $T$
+    triangulaire supérieure telles que $B=PTP^{-1}$, de sorte que
+    $MP\mu_A(T)P^{-1}=0$, d'où $MP\mu_A(T)=0$. Supposons par
+    l'absurde qu'aucune valeur propre de $B$ ne soit valeur propre de
+    $A$. Alors la diagonale de $T$ ne contient aucune racine de
+    $\mu_A$, et $T$ est donc inversible. Il en résulte $MP=0$, et donc
+    $M=0$, contradiction.
+  \item Supposons que $A$ et $B$ admettent une valeur propre commune
+    $\lambda$. Il existe $X\in M_{n,1}(\C)$ non nul tel que
+    $AX=\lambda X$. $B$ et $B^\top$ ayant le même polynôme
+    caractéristique, il existe également $Y\in\M_{n,1}(\C)$ non nul
+    tel que $B^\top Y=\lambda Y$, ce qui donne $Y^\top B=\lambda
+    Y^{\top}$. Posons alors $M=XY^{\top}=(x_iy_j)_{1\le i,j\le
+      n}$. $X$ et $Y$ ayant au moins un coefficient non nul, $M$ est
+    non nulle et:
+    \[AM=AXY^{\top}=\lambda XY^{\top}=X\lambda
+      Y^{\top}=XY^{\top}B=MB\]
+  \end{enumerate}
+\end{solution}
+\end{enonce}

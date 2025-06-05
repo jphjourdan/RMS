@@ -1,0 +1,13 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E562},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soient $A,B\in\M_n(\C)$ telles que $AB=0$. Montrer $\forall k\ge 1$,
+  $\tr(A^k)+\tr(B^k)= \tr((A+B)^k)$.
+   %exo 562 RMS 134-1
+\end{exercise}
+\begin{solution}
+  On montre déjà par récurrence que
+ $(A+B)^k=\sum_{i=0}^kB^iA^{k-i}$. Puis, pour $1\le i\le k-1$, on a
+ $\tr(B^iA^{k-i})=\tr(A^{k-i}B^i)=0$ et on conclut par linéarité de la
+ trace.
+\end{solution}
+\end{enonce}

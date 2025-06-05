@@ -1,0 +1,26 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E561},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Trouver les solutions dans $\M_2(\R)$ de
+  $X^2+X=\begin{pmatrix} 1 & 1\\ 1 & 1\end{pmatrix}$.
+   %exo 561 RMS 134-1
+\end{exercise}
+\begin{solution}
+  La matrice $M=\begin{pmatrix} 1 & 1\\ 1 & 1\end{pmatrix}$ est
+  semblable à $D=\begin{pmatrix} 2 & 0\\ 0 & 0\end{pmatrix}$:
+  $M=PDP^{-1}$. En notant $X=PYP^{-1}$, l'équation se ramène à
+  $Y^2+Y=D$ dont les seules solutions diagonales sont
+  $\begin{pmatrix} 1 & 0\\ 0 & 0\end{pmatrix}$,
+  $\begin{pmatrix} 1 & 0\\ 0 & -1\end{pmatrix}$,
+  $\begin{pmatrix} -2 & 0\\ 0 & 0\end{pmatrix}$,
+  $\begin{pmatrix} -2 & 0\\ 0 & -1\end{pmatrix}$.
+  On peut voir que si $\begin{pmatrix} a & b\\ c & d\end{pmatrix}$ est
+  une solution non diagonale, alors $a+d=-1$, ce qui conduit (écrire
+  le système) à $2=a^2-d^2+a-d=0$, contradiction. Il n'y a
+  donc bien que ces quatre solutions, qui correspondent à (une fois
+  repassé à $X$)
+  $\dfrac12\begin{pmatrix} 1 & 1\\ 1 & 1\end{pmatrix}$,
+  $-\begin{pmatrix} 1 & 1\\ 1 & 1\end{pmatrix}$,
+  $\begin{pmatrix} 0 & 1\\ 1 & 0\end{pmatrix}$,
+  $-\dfrac12\begin{pmatrix} 3 & 1\\ 1 & 3\end{pmatrix}$.
+\end{solution}
+\end{enonce}

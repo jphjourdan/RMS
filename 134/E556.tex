@@ -1,0 +1,32 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E556},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  Soient $p,q\in\C$. On note $x_1,x_2,x_3$ les racines (non
+nécessairement distinctes) du polynôme $X^3+pX+q$. Pour $j\in\N$, on
+pose $N_j=x_1^j+x_2^j+x_3^j$.
+
+Calculer, pour $n\in\N^*$, le déterminant de la matrice
+$M_n=(N_{i+j-2})_{1\le i,j\le n}$.
+   %exo 556 RMS 134-1
+\end{exercise}
+\begin{solution}
+  Les relations coefficients/racines permettent d'obtenir que $N_1=0$,
+  $N_2=-2p$ et $N_3=-3q$, de sorte qu'on calcule explicitement
+  $\det(M_1)=3$, $\det(M_2)=-6p$, $\det(M_3)=-4p^3-27q^2$ (tiens donc,
+  le discriminant ...)
+  Puisque $x_i^{j+3}+px_i^{j+1}+qx_i^{j}=0$ pour $1\le i\le 3$ et
+  $j\ge 0$, on a $N_{j+3}+pN_{j+1}+N_j=0$ ce qui fournit une
+  combinaison linéaire nulle des quatres premières colonnes de $M_n$ dès que
+  $n\ge 4$, et donc $\det(M_n)=0$ dans ce cas.
+
+  
+  Remarque: Y a-t-il plus simple que de relier cet exercice aux formules
+  de Newton ? On a, très 
+  généralement, pour $x_1,\ldots x_n$ et $\sigma_1,\ldots,\sigma_n$
+  les fonctions symétriques associées, $N_p-\sigma_1
+  N_{p-1}+\cdots+(-1)^n\sigma_nN_{p-n}=0$ pour $p\ge n$ (facile en
+  passant par les relations coeffs / fonctions symétriques comme dans
+  l'exercice) et $N_p-\sigma_1
+  N_{p-1}+\cdots+(-1)^{p-1}\sigma_{p-1}N_1+(-1)^pp\sigma_p=0$ pour
+  $1\le p\le n-1$ (plus dur).
+\end{solution}
+\end{enonce}

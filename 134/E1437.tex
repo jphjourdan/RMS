@@ -1,0 +1,37 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1437},subtitle={CCINP MP 2023},difficulty={},tags={algebre, ccinp, 2023}]
+  On note $E=\R[X]$.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que l'on définit un produit scalaire sur $E$ en posant
+   $\langle P,Q\rangle=\dint_0^1P(t)Q(t)\d t$.
+ \item Trouver $a$ et $b$ dans $\R$ tel que $\dint_0^1(t^2-at-b)^2\d
+   t$ soit minimal:
+   \begin{itemize}
+   \item en construisant une base orthonormée de $\R_1[X]$
+   \item en recherchant $a,b$ tels que $X^2-aX-b$ soit orthogonal à
+     $\R_1[X]$.
+   \end{itemize}
+ \end{enumerate}
+  %exo 1437 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Facile, ne pas oublier d'invoquer la continuité des polynômes
+    pour le caractère défini positif.
+  \item
+    \begin{itemize}
+    \item On applique le procédé d'orthonormalisation de Schmidt à
+      $(1,X)$, on trouve $\left(1,2\sqrt{3}(X^2-\dfrac12)\right)$. Le
+      min cherché est réalisé pour le le projeté orthogonal de $X^2$
+      sur $\R_1[X]$, on trouve $X-\dfrac16$.
+    \item Il s'agit encore d'obtenir ce projeté mais sans passer par
+      l'expression dans une base orthonormale.
+    \item Remarque: on peut aussi trouver $a,b$ en faisant un détour
+      par le calcul différentiel et en cherchant les
+      points critiques de la fonction $(x,y)\mapsto
+      \dint_0^1(t^2-xt-y)^2\d t$.
+  \end{itemize}
+    
+  \end{enumerate}
+\end{solution}
+\end{enonce}

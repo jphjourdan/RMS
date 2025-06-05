@@ -1,0 +1,53 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E881},subtitle={Oral Mines-Ponts},difficulty={},tags={probas, mines-ponts, 2023}]
+  Soient $m,n\in\N^*$ tel que $m\le\dfrac{n}{2}$. On se donne deux
+ urnes contenant chacune des boules numérotées de $1$ à $n$. On tire
+ $m$ boules dans chaque urne et l'on note $X$ le nombre de
+ doublons. Calculer la loi de $X$ puis sa variance.
+  %exo 881 RMS 134-1
+\end{exercise}
+\begin{solution}
+  Notons $E_{n,m}$ l'ensemble des parties de $\llbracket
+  1,n\rrbracket$ à $m$ éléments. La situation décrite semble nous
+  autoriser à supposer $A\in E_{n,m}$ fixée (tirage dans la première
+  urne) et à décrire l'événement $(X=k)$ comme l'ensemble des éléments
+  $B$ de l'univers $E_{n,m}$ (tirage dans la seconde urne) tels que
+  $|A\cap B|=k$. Cet ensemble se met en bijection avec $E_{m,k}\times
+  E_{n-m,m-k}$ (choix des $k$ éléments communs à $A$, puis des $m-k$
+  restant parmi ceux hors de $A$), et on a donc:
+  \[\P(X=k)=\dfrac{\combi{m}{k}\combi{n-m}{m-k}}{\combi{n}{m}}\]
+
+  {\itshape Remarque: si on pose plutôt $\Omega=E_{n,m}^2$,
+    l'événement $(X=k)$ est l'ensemble des couples $(A,B)$ tels que
+    $|A\cap B|=k$, et se met en bijection avec
+    $E_{n,k}\times E_{n-k,m-k}\times E_{n-m,m-k}$ (choix 
+    de $k$ éléments communs, puis des $m-k$ restant pour $A$ parmi ceux
+    hors de $A\cap B$, puis des  $m-k$ restant pour $B$ parmi ceux hors
+    de $A$). On a alors:
+    \[\P(X=k)=\dfrac{\combi{n}{k}\combi{n-k}{m-k}\combi{n-m}{m-k}}{\combi{n}{m}^2},\]
+    et on retombe bien sur le résultat plus haut grâce à
+    l'égalité
+    $\combi{n}{m}\combi{m}{k}=\combi{n}{k}\combi{n-k}{m-k}$
+    (généralisation de la "formule du capitaine").}
+  
+  L'utilisation de la "formule du capitaine" donne:
+  \[\combi{n}{m}\Esp(X)=\sum_{k=0}^mk\combi{m}{k}\combi{n-m}{m-k}
+    =m\sum_{k=1}^m\combi{m-1}{k-1}\combi{n-m}{m-k}
+    =m\sum_{k=0}^{m-1}\combi{m-1}{k-1}\combi{n-m}{m-1-k}\]
+  
+  En adaptant alors la formule
+  $\combi{n}{m}=\dsum_{k=0}^m\combi{m}{n}\combi{n-m}{m-k}$ (cas
+  particulier d'une formule classique, qui a une interprétation
+  combinatoire simple, et qui valide ici qu'on a bien $\sum
+  \P(X=k)=1$), on obtient:
+  \[\Esp(X)=\dfrac{m\combi{n-1}{m-1}}{\combi{n}{m}}=\dfrac{m^2}{n}\]
+  Pour la variance, on calcule déjà:
+  \[\combi{n}{m}\Esp(X(X-1))=\sum_{k=0}^mk(k-1)\combi{m}{k}\combi{n-m}{m-k}
+    =m(m-1)\sum_{k=2}^m\combi{m-2}{k-2}\combi{n-m}{m-k}
+    =m(m-1)\combi{n-2}{m-2},\]
+  D'où l'on tire:
+  \[\Esp(X^2)=\dfrac{m^2(m-1)^2}{n(n-1)}+\Esp(X)
+    =\dfrac{m^2\big((m-1)^2+n-1\big)}{n(n-1)},\]
+  et finalement $\Var(X)=\Esp(X^2)-\Esp(X)^2=$ ... Calculs à vérifier.
+\end{solution}
+\end{enonce}

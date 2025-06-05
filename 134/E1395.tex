@@ -1,0 +1,32 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1395},subtitle={IMT MP 2023},difficulty={},tags={algebre, mines-telecom, 2023}]
+  Soient $A,B\in\M_n(\C)$. On suppose que $A$ est inversible, que $B$
+  est nilpotente et que $A$ et $B$ commutent.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer que $A-B$ et $A+B$ sont inversibles.
+  \item Si $A$ et $B$ ne commutent pas, montrer qu'alors $A+B$ n'est
+    pas forcément inversible.
+  \end{enumerate}
+  %exo 1395 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Posons $M=A^{-1}B$ de sorte que $A-B=A(I_n-M)$. $A^{-1}$ et
+    $B$ commutent (facile), donc $M$ est nilpotente. $I_n-M$ est donc
+    inversible d'inverse $\dsum_{k=0}^{m-1}M^k$, avec $m$ le
+    nilindice, et il en résulte bien que $A-B$ est inversible, avec
+    \[(A-B)^{-1}=(I_n-M)^{-1}A^{-1}=\sum_{k=0}^{m-1}A^{-k-1}B^k\]
+    On a bien sûr immédiatement l'inversibilité de $A+B$ également, en
+    remplaçant $B$ par $-B$.
+  \item Il suffit de considérer par exemple $A=
+    \begin{pmatrix}
+      0 & -1\\
+      1 & 0
+    \end{pmatrix}$ et $B=
+    \begin{pmatrix}
+      0 & 1\\
+      0 & 0
+    \end{pmatrix}$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

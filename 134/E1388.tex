@@ -1,0 +1,62 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1388},subtitle={CCINP MP 2023},difficulty={},tags={algebre, ccinp, 2023}]
+  On note $S$ l'espace vectoriel des suites complexes. On considère
+  l'endomorphisme (de décalage) de $S$ défini par
+  $L((u_n)_{n\in\N})=(u_{n+1})_{n\in\N}$.
+  \begin{enumerate}[\bfseries a)]
+  \item Soit $\lambda\in\C$. Trouver le noyau de $L-\lambda id$ et
+    celui de $(L-\lambda id)^2$.
+  \item On note $F$ le sous-espace vectoriel de $S$ des suites $(u_n)$
+    vérifiant:
+    \[\forall
+      n\in\N,\;u_{n+4}=\dfrac12u_{n+3}+3u_{n+2}-\dfrac7{2}u_{n+1}+u_n.\]   
+    Montrer que
+    $F=\Ker(2L-id)\oplus\Ker(L+2id)\oplus\Ker(L-id)^2$.
+  \item Déterminer la dimension de $F$ et une base de $F$.
+  \end{enumerate}
+  %exo 1388 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item On montre facilement que
+    $u\in\Ker(L-id)$ ssi $u$ est une suite géométrique de raison
+    $\lambda$ donc $\Ker(L-id)=\{(a \lambda^n),
+    a\in\C\}$. %=\vect(g_{\lambda})$ avec $g_{\lambda}=(\lambda^n)$.
+
+    On a ensuite $(L-\lambda id)^2=L^2-2\lambda L+\lambda^2id$ donc
+    $u\in \Ker(L-id)^2$ 
+   ssi $u_{n+2}=2\lambda u_{n+1}-\lambda^2 u_n$ pour tout $n\in\N$. Il
+   s'agit d'une relation de récurrence linéaire d'ordre $2$ dont
+   l'équation caractéristique est précisément $(x-\lambda)^2=0$. Avec
+   une seule racine double $\lambda$, les solutions d'une telle
+   relations sont les suites $(u_n)$ ayant un terme général de la forme
+   $u_n=a\lambda^n+bn\lambda^{n-1}$, avec $a,b\in\C$. On a ainsi
+   $\Ker(L-id)=\{(a \lambda^n+bn\lambda^{n-1}), (a,b)\in\C^2\}$.
+
+   {\itshape Remarque: en notant  $g_{\lambda}$ la suite géométrique
+     $(\lambda^n)_{n\in\N}$ et $g'_{\lambda}$ la suite
+     $(n\lambda^{n-1})_{n\in\N}$, on a
+     $\Ker(L-id)=\vect(g_\lambda)$ et $\Ker(L-id)^2=\vect(g_\lambda,
+     g'_{\lambda})$. Le cas $\lambda=0$ est bien pris en compte ici
+     avec l'abus de notation $0^n=1$ et $n\times 0^{n-1}=0$ si
+     $n=0$: $\Ker(L)$ 
+     est les sous-espaces des suites nulles à partir du rang $1$, et
+     $\Ker(L)$ celui des suites nulles à partir du rang $2$.
+     }
+   \item Une suite $u$ est dans $F$ ssi
+     $L^4(u)=\dfrac12L^3(u)+3L^2(u)-\dfrac72L(u)+id$, donc ssi $u$ est
+     dans le noyau de $P(L)$ avec
+     $P=X^4-\dfrac12X^3-3X^2+\dfrac72X-1$. La question de l'énoncé
+     suggère fortement que
+     $P=\dfrac12(2X-1)(X+2)(X-1)^2$, ce que l'on vérifie
+     facilement. Les facteurs $(2X-1)$, $(X+2)$ et $(X-1)^2$ sont
+     premiers entre eux deux à deux (pas de racine commune) et le
+     lemme de décomposition des noyau donne directement:
+     \[F=\Ker(P(L))=\Ker(2L-id)\oplus\Ker(L+2id)\oplus\Ker(L-id)^2\]
+   \item En reprenant nos notations de la question \textbf{a)}, on
+     peut proposer $\mathcal{B}=(g_{\frac12}, g_{-2}, g_1,g_1')$, base
+     adaptée à la décomposition en somme directe de $F$, qui est donc
+     de dimension $4$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

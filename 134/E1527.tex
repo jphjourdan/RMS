@@ -1,0 +1,75 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1527},subtitle={CCINP MP 2023},difficulty={},tags={analyse, ccinp, 2023}]
+  \begin{enumerate}[\bfseries a)]
+  \item Déterminer les extrema de $f:(u,v)\in[0,1]^2\mapsto
+    uv(1-u-v)$.
+  \item Soit $(A,B,C)$ un triangle d'aire égale à $1$. Soit $M$ un
+    point dans le triangle. Maximiser le produit des distances de $M$
+    aux côtés du triangle.
+  \end{enumerate}
+  %exo 1527RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Déterminons déjà les points critiques de $f$. Cette fonction
+    est de classe $\mathcal{C}^{\infty}$ par théorèmes d'opérations et
+    on trouve
+    \[\dfrac{\partial f}{\partial
+        u}(u,v)=v(1-2u-v)\qquad\text{et}\qquad
+      \dfrac{\partial f}{\partial
+        v}(u,v)=u(1-2v-u)\]
+    En étendant le domaine de définition à $\R^2$, on montre sans
+    difficulté que les deux dérivées partielles s'anulent en $(u,v)$
+    ssi $(u,v)\in\{(0,0), (1,0), (0,1), (\frac13,\frac13)\}$. Une
+    étude de la Hessienne en chacun de ces points peut nous fournir la
+    nature de ces points critiques. On a de façon générale
+    \[H_f(u,v)=
+      \begin{pmatrix}
+        -2v & 1-2u-2v\\
+        1-2u-2v & -2u
+      \end{pmatrix}\]
+    On constate que $H_f(0,0)$, $H_f(1,0)$ et $H_f(0,1)$ ont toutes
+    les trois un déterminant qui vaut $-1$, ce qui correspond donc à
+    des points de type selle. En revanche on a:
+    \[H_f(\frac13,\frac13)=-\frac13
+      \begin{pmatrix}
+        2 & 1\\
+        1 & 2
+      \end{pmatrix},\]
+    de déterminant $1>0$ et de trace $-\frac43<0$ ce qui correspond à
+    un maximum local. Ce maximum est même global sur $[0,1]^2$
+    puisqu'il n'y a pas d'autre point critique dans $]0,1[^2$ et
+    puisque $f$ est nulle ou strictement négative sur la frontière de
+    $[0,1]^2$.
+
+    {\itshape Remarque: on peut aussi invoquer le théorème des bornes
+      atteintes qui assure de l'existence d'un maximum et d'un minimum
+      globaux pour $f$ sur le compact $[0,1]^2$. L'étude des
+      Hessiennes n'est alors pas nécessaire, le maximum ne pouvant
+      être atteint qu'en l'unique point critique dans $]0,1[^2$, car
+      $f$ y est alors supérieure à ses valeurs sur la frontière. On
+      voit facilement qu'un minimum global est atteint en $(1,1)$. Vu la
+      question suivante, il semblerait peut-être
+      plus naturel d'étudier les extrema de $f$ sur le triangle $T=OIJ$
+      avec $O=(0,0)$, $I=(1,0)$ et $J=(0,1)$. Dans ces conditions, $f$
+      est nulle sur tout la frontière, strictement positive à
+      l'intérieur et admet donc toujours cet unique maximum en
+      $(\frac13,\frac13)$ tandis que toute les points de la frontière
+      peuvent être considérés comme des minima locaux.}
+  \item Notons $x,y,z$ les distances respectives aux droites $(BC)$,
+    $(AC)$ et $(AB)$. Un petit dessin montre clairement que les
+    triangles $MBC$, $MAC$ et $MAB$ ont pour aires respectives
+    \[u=\dfrac{ax}2,\qquad v=\dfrac{by}{2},\qquad w=\dfrac{cz}2,\]
+    avec $a,b,c$ les longueurs respectives des côtés $[BC]$, $[AC]$ et
+    $[AB]$. On voit ainsi que le produit $xyz$ des distances est
+    maximal ssi le produit $uvw$ est maximal. Or la somme des aires
+    des triangles $MBC$, $MAC$ et $MAB$ est égale à l'aire du triangle
+    $ABC$ de sorte que $u+v+w=1$, de sorte que
+    $uvw=uv(1-u-v)=f(u,v)$. Le produit $xyz$ est donc maximal lorsque
+    $u=v=w=\dfrac13$, d'après la question précédente, et vaut alors
+    $\dfrac{8}{27abc}$. Le point $M$ doit en tout cas être placé de
+    telle sorte que les segment $[MA]$, $[MB]$ et $[MC]$ découpent le
+    triangle $ABC$ en trois triangles d'aires égales.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

@@ -1,0 +1,51 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1407},subtitle={IMT MP 2023},difficulty={},tags={algebre, mines-telecom, 2023}]
+  On considère $E=\{1,2,\ldots,n\}$, $m=2^n-2$, $F_1,\ldots,F_m$ les
+  parties de $E$ non triviales (c'est-à-dire dans
+  $\mathcal{F}=\mathcal{P}(E)\setminus \{\emptyset, E\}$).
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer qu'il existe une unique bijection $g$ de $\mathcal{F}$
+    dans $\mathcal{F}$ telle que $\forall F\in\mathcal{F},\;g(F)\cap
+    F=\emptyset$.
+  \item Soit $A=(a_{i,j})_{1\le i,j\le m}\in\M_m(\R)$ telle que
+    $a_{i,j}=1$ si $F_i\cap F_j=\emptyset$, $a_{i,j}=0$
+    sinon. Calculer $\det(A)$.
+  \end{enumerate}
+  % exo 1407 RMS 134-1
+  % à vérifier dans le bouquin, j'ai échangé $1$ et $0$ pour les
+  % valeurs, bien plus cohérent avec la question précédente.
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Soit $g$ une telle bijection. Pour tout $F\in\mathcal{F}$ on a
+   $|F|+|g(F)|\le n$ et: % idée de Thomas Louboutin
+   \[\sum_{F\in\mathcal{F}}(n-|F|-|g(F)|)=
+     mn-\sum_{F\in\mathcal{F}}|F|
+     -\sum_{F\in\mathcal{F}}|g(F)|
+     = mn-\sum_{F\in\mathcal{F}}|F|
+     -\sum_{F\in\mathcal{F}}|F^c|=
+     mn-\sum_{F\in\mathcal{F}}|E|=0,\]
+   en réorganisant la seconde somme des $|g(F)|$ suivant la bijection
+   $F\mapsto g(F)^c$. On dispose donc d'une somme nulle à termes posifs
+   et on peut en déduire $|F|+|g(F)|= n$ pour tout $F$, de sorte que
+   $g(F)=F^c$.
+ \item Une permutation $\sigma\in S_m$ s'identifie dans le contexte de
+   l'exercice à une bijection $f$ de $\mathcal{F}$, et on a ainsi
+   $a_{\sigma(j),j}=1$ si, et seulement si $f(F_j)\cap F_j=\emptyset$. Puisque
+   seule la bijection $g$ vérifie cette condition pour tout
+   $i\in\llbracket 1,m\rrbracket$, le produit
+   $\dprod{j=1}^ma_{\sigma(j),j}$ est nul pour tout
+   $\sigma$ autre que la permutation $\sigma_0$ qui s'identifie à $g$,
+   et vaut $1$ pour $\sigma=\sigma_0$. On a ainsi:
+   \[\det(A)=
+     \sum_{\sigma\in
+       S_m}\varepsilon(\sigma)\dprod{j=1}^ma_{\sigma(j),j}=
+     \varepsilon(\sigma_0)\]
+   Remarquons maintenant $\sigma_0$ est involutive (on a $g=g^{-1}$)
+   et se décompose comme le produit de $\dfrac{m}2=2^{n-1}-1$
+   transpositions à support disjoints. Il s'agit donc d'une
+   permutation impaire et on a finalement:
+   \[\det(A)=-1\]
+  \end{enumerate}
+\end{solution}
+\end{enonce}

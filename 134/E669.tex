@@ -1,0 +1,33 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E669},subtitle={Mines-Ponts MP 2023},tags={analyse, mines-ponts, 2023},difficulty={}]
+  Soient $E$ un espace vectoriel normé et $F$ un sous-espace vectoriel
+ de dimension finie.
+ \begin{enumerate}[\bfseries a)]
+ \item Montrer que: $\forall x\in E,\;\exists y\in
+   F,\;d(x,F)=\|y-x\|$.
+ \item On suppose que $F\neq E$. Montrer qu'il existe $u\in E$ tel que
+   $d(u,F)=\|u\|=1$.
+ \item En déduire que $B_f(0,1)$ est compact si et seulement si $E$
+   est de dimension finie.
+ \end{enumerate}
+  %exo 669 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item On utilise la continuité de $f:z\mapsto \|z-x\|$ sur le
+    compact $B=F\cap B_F(0,2\|x\|)$. $f$ admet un min en $y$. si $z\in
+    F\setminus B$, on a $\|z-x\|\ge \|x\|=f(0)\ge f(y)$. 
+  \item Avec $x\notin F$ et $y$ comme précédemment, on pose
+    $u=\dfrac1{\|x-y\|}(x-y)$. Clairement $d(u,F)\le \|u\|=1$. On
+    obtient l'autre inégalité en montrant $1\le \|u-z\|$ pour tout
+    $z\in F$, ce qui revient à montrer $\|x-y\|\le\|x-y-\|x-z\|z\|$,
+    vrai par définition de $y$.
+  \item Supposons $E$ de dimension infinie. On part de $e_0$ unitaire,
+    puis, en notant $F_n=\vect(e_0,\ldots,e_n)$, on peut construire
+    $e_{n+1}$ unitaire tel que $d(F_n,e_{n+1})=1$. La suite $(e_n)_n$
+    est dans $B_f(0,1)$ mais n'admet aucune suite extraite
+    convergente car $\|e_{\varphi(n+1)}-e_{\varphi(n)}\|\ge
+    d(e_{\varphi(n+1)},F_{\varphi(n+1)-1})=1$.
+  \end{enumerate}
+\end{solution}
+\end{enonce}

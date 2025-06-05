@@ -1,0 +1,31 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1462},subtitle={CCINP MP 2023},difficulty={},tags={analyse, ccinp, 2023}]
+  On note $E=\C[X]$. Pour $P\in E$ d'écriture développée
+  $P=\dsum_{k\ge 0}a_kX^k$, on pose $\|P\|=\dsup_{k}|a_k|$.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer que $\|\;\|$ est une norme de $E$.
+  \item Soit $b\in\C$, on souhaite étudier la continuité de
+    l'application $f:P\in E\mapsto P(b)\in\C$.
+    \begin{enumerate}[(i)]
+    \item Montrer que, si $|b|<1$, alors $f$ est continue.
+    \item Étudier la continuité de $f$ si $|b|=1$ en utilisant la
+      suite de polynômes $(P_n)_{n\ge 0}$, où, pour $n\in\N$,
+      $P_n=\dsum_{k=0}^n\conj{b}^kX^k$.
+    \item Montrer que, si $|b|>1$, alors $f$ n'est pas continue.
+    \end{enumerate}
+  \end{enumerate}
+  %exo 1462 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Facile, correspond à la norme $\|\cdot\|_{\inftyø}$ sur $\C^{(\N)}$.
+  \item
+    \begin{enumerate}[(i)]
+    \item $f$ est linéaire et $|f(P)|\le \dfrac1{1-|b|}\|P\|$.
+    \item On a $f(P_n)=n+1\to +\infty$ alors que $\|P_n\|=1$: $f$
+      n'est pas continue.
+    \item Il suffit par exemple de considérer $(X^n)_n$. 
+    \end{enumerate}
+  \end{enumerate}
+\end{solution}
+\end{enonce}

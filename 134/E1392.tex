@@ -1,0 +1,21 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1392},subtitle={IMT MP 2023},difficulty={},tags={algebre, mines-telecom, 2023}]
+  La matrice $A=
+  \begin{pmatrix}
+    3 & 2\\ 1 & 2
+  \end{pmatrix}\in\M_2(\R)$ est-elle inversible ? Déterminer $A^n$
+  pour tout $n\in\Z$.
+  %exo 1392 RMS 134-1
+  % -1 initialement à la place du 1, mais calculs plus bourrins
+\end{exercise}
+\begin{solution}
+  On a $\det(A)=4$, donc la matrice est inversible. Son polynôme
+  caractéristique est $\chi_A=X^2-5X+4=(X-4)(X-1)$. $A$ est donc
+  semblable à la matrice $D=\mathrm{diag}(4,1)$, et il existe
+  $P\in\GL_2(\R)$ telle que $A=PDP^{-1}$, d'où l'on tire
+  $A^n=PD^nP^{-1}$ pour tout $n\in\N$. Pas besoin de chercher $P$ et
+  $P^1$, on sait que les coefficients de $A^n$ vont être de la forme
+  $a+4^nb$, et il suffit de résoudre $4$ petits systèmes.
+  \[A^n=\]
+\end{solution}
+\end{enonce}

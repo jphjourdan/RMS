@@ -1,0 +1,44 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E551},subtitle={Oral Mines-Ponts},difficulty={},tags={algebre, mines-ponts, 2023}]
+  \begin{enumerate}[\bfseries a)]
+  \item Soient $p\in\N^*$, $a_1,\ldots,a_p\in\R$ non tous nuls et
+    $b_1,\ldots,b_p\in\R$ avec $b_1<\cdots<b_p$. Montrer que
+    $f_p:x\mapsto\dsum_{i=1}^pa_i\e^{b_ix}$ s'annule au  plus $p-1$
+    fois sur $\R$.
+  \item Soit $n\in\N^*$. Soient $\alpha_1<\cdots<\alpha_n$ et
+    $\beta_1<\cdots<\beta_n$ des réels. Montrer que
+    $\det(\e^{\alpha_i\beta_i})_{1\le i,j\le n}>0$.
+  \end{enumerate}
+% question a) plutôt bien analyse je dirais
+  % exo 551 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+    \item Récurrence sur $p$. Pour l'hérédité, on écrit
+      $f_{p+1}(x)=\e^{b_{p+1}x}g_p(x)$ de sorte que
+      $g_p'(x)=\dsum_{i=1}^{p}a_i(b_i-b_{p+1})\e^{(b_i-b_{p+1})x}$ s'annule
+      au plus $p-1$ fois (HR) et la stricte monotonie entre deux
+      points d'annulation successifs prouve que $g_p$, donc $f_{p+1}$,
+      s'annule au plus $p$ fois.
+    \item
+      Si ce déterminant est nul, il existe une combinaison linéaire nulle
+      des lignes $\sum a_iC_i$ avec les $a_i$ non tous nuls, et la
+      fonction $x\mapsto \dsum_{i=1}^na_i\e^{\alpha_i x}$ s'annule au
+      moins $n$ fois (en tous les $\beta_j$), absurde.
+      
+      %pas mieux que ce qui suit pour l'instant
+      Pour la stricte positivité, examinons déjà le cas
+      $\alpha_i=\beta_i=i$, il s'agit alors d'un déterminant de
+      Vandermonde, à savoir
+      $V(\e,\e^2,\ldots,\e^n)=\dprod_{i<j}(\e^j-\e^i)>0$. On construit
+      maintenant un chemin continue qui permet de se ramener à ce cas:
+      considère l'application $\Phi:[0,1]\to\R$ définie par
+      \[\Phi(t)=\det\Big(\e^{\big((\alpha_i-i)t+i\big)\big((\beta_j-j)t+j\big)}\Big)\]
+      $\Phi$ est continue sur $[0,1]$, $\Phi(0)>0$ et $\Phi(1)$ est
+      le déterminant cherché. Pour les mêmes raisons que le cas $t=1$,
+      on a $\Phi(t)\neq 0$ pour tout $t\in]0,1[$. Si $\Phi(1)<0$,
+      le théorème des valeurs intermédiaires nous fournit $t\in
+      ]0,1[$ tel que $\Phi(t)=0$, absurde.
+    \end{enumerate}
+\end{solution}
+\end{enonce}

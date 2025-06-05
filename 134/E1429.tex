@@ -1,0 +1,28 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1429},subtitle={CCINP MP 2023},difficulty={},tags={algebre, ccinp, 2023}]
+  Soit $n\in\N^*$ et $N_n$ l'ensemble des matrices nilpotentes de
+ $\M_n(\C)$. Soit $A\in\M_n(\C)$. Montrer que les propositions
+ suivantes sont équivalentes:
+
+ i) $A$ est diagonalisable;\qquad\qquad
+ ii) $\forall P\in\C[X],\quad P(A)\in N_n\eq P(A)=0$.
+  %exo 1429 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{itemize}
+  \item Supposons $i)$, avec $A$ semblable à
+    $\mathrm{diag}(\lambda_1,\ldots,\lambda_n)$, et soit $P\in\C[X]$ de sorte
+    que $P(A)$ est semblable à
+    $\mathrm{diag}(P(\lambda_1),\ldots,P(\lambda_n))$. Supposons
+    $(P(A))^q=0$ pour un certain $q\N$. On a alors $P(\lambda_i)^q=0$,
+    et donc $P(\lambda_i)=0$ pour tout $i$, d'où $P(A)=0$. 
+  \item Supposons $ii)$, et notons
+    $P=(X-\lambda_1)\cdots(X-\lambda_q)$ avec
+    $\lambda_1,\ldots,\lambda_r$ les valeurs propres $2$ à $2$
+    distinctes. En notant $q$ la plus grande multiplicité des
+    $\lambda_i$ dans le polynôme minimal (ou dans le polynôme
+    caractéristique, ou même simplement $q=n$), on aura nécessairement
+    $(P(A))^q=0$, et donc $P(A)=0$. 
+  \end{itemize}
+\end{solution}
+\end{enonce}

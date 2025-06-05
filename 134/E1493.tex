@@ -1,0 +1,28 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E1493},subtitle={CCINP MP 2023},difficulty={},tags={analyse, ccinp, 2023}]
+  Soit $(a_n)_{n\ge 0}$ une suite décroissante de réels positifs qui
+  converge vers $0$. Pour tout $t\in[0,1]$, on pose
+  $u_n(t)=a_n(1-t)t^n$.
+  \begin{enumerate}[\bfseries a)]
+  \item Montrer que la série de fonctions $\dsum u_u$ converge
+    simplement sur $[0,1]$.
+  \item Trouver une condition nécessaire et suffisante pour que cette
+    série converge normalement.
+  \item Montrer que la série $\sum u_n$ converge uniformément sur
+    $[0,1]$.
+  \end{enumerate}
+  %exo 1493 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}[\bfseries a)]
+  \item Comparaison série géométrique si $t<1$.
+  \item le $\sup|(1-t)t^n|$ est atteint en $\dfrac{n}{n+1}$, et on
+    trouve $\|u_n\|_{\infty}\sim \dfrac{a_n}{en}$. La CNS est donc
+    $\sum\dfrac{u_n}{n}$ converge.
+  \item Pour $\varepsilon>0$ fixé, on dispose de $n_0$ tel que $0\le
+    a_n\le \varepsilon$ si $n\ge n_0$. On a alors, pour $n\ge n_0$:
+    \[|R_n(t)|\le \varepsilon\left|\sum_{k\ge n+1}(1-t)t^k\right|
+      \le \varepsilon t^{n+1}\le \varepsilon\]
+  \end{enumerate}
+\end{solution}
+\end{enonce}
