@@ -1,0 +1,49 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E576},subtitle={Oral
+    Mines-Ponts},theme={algebre},annee={2023},concours={mines-ponts},filiere={MP}]
+Soit $E$ un $\K$-espace vectoriel. Une partie $S$ de $\Lin(E)$ est
+dite dense si, pour tout $n\ge 1$, toute famille $(b_1,\ldots,b_n)$ de
+vecteurs de $E$ et toute famille libre $(a_1,\ldots,a_n)$ de vecteurs
+de $E$, il existe $f\in S$ tel que $f(a_i)=b_i$ pour tout
+$i\in\llbracket 1,n\rrbracket$.
+\begin{enumerate}
+\item Quelles sont les parties denses de $\Lin(E)$ si $E$ est de
+  dimension finie ?
+\item Dans cette question, on suppose que $E$ n'est pas de dimension
+  finie.
+  \begin{enumerate}
+  \item Montrer que $\{f\in\Lin(E),\; \rg(f)< +\infty\}$ est dense dans
+    $\Lin(E)$.
+  \item Même question avec $\{f\in\Lin(E),\; \rg(f)\text{ fini et
+      pair}\}$.
+  \item Si $S$ est dense dans $\Lin(E)$, déterminer
+    $\{g\in\Lin(E)\,;\,\forall f\in S, fg=gf\}$.
+  \end{enumerate}
+\end{enumerate}
+   %exo 576 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+  \item Il n'y a que $\Lin(E)$. En effet, une base $(e_1,\ldots,e_n)$
+    étant fixée, tout $g\in\Lin(E)$ coincide avec $f\in S$ qui
+    vérifierait $f(e_i)=g(e_i)$.
+    \begin{enumerate}
+    \item Remarque: il faut admettre que tout sous-espace de dimension
+      finie admet un supplémentaire. En considérant un supplémentaire
+      $H$ de $\vect(a_1,\ldots,a_n)$, il suffit de définir $f$ par
+      $f(a_i)=b_i$ et $f(x)=0$ si $x\in H$. On a alors $\rg(f)\le n$.
+    \item Comme précédemment si $\rg(b_1,\ldots,b_n)$ est pair, sinon
+      on se ramène à ce cas en fixant arbitrairement
+      $a_{n_1}\notin\vect(a_1,\ldots,a_n)$ et
+      $b_{n+1}\notin\vect(b_1,\ldots,b_n)$.
+    \item Soit $g\in\Lin(E)$ tel que $fg=gf$ pour tout $f\in
+      S$. Fixons $x\in E$ non nul et notons $y=g(x)$. Supposons
+      $(x,y)$ libre. Il existe alors $f\in S$ tel que
+      $f(x)=f(y)=x$. On a alors $y=g(f(x))=f(g(x))=x$, absurde. Il
+      existe donc $\lambda\in\K$ tel que $g(x)=\lambda x$. Ceci est
+      vrai pour tout $x\in E$ et on en déduit (exercice classique de
+      montrer que $\lambda$ ne dépend pas de $x$) que $g=\lambda id_E$.
+    \end{enumerate}
+  \end{enumerate}
+\end{solution}
+\end{enonce}

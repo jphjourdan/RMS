@@ -1,0 +1,30 @@
+\begin{enonce}
+\begin{exercise}[ID={RMS134 E574},subtitle={Oral
+    Mines-Ponts},theme={algebre},annee={2023},concours={mines-ponts},filiere={MP}]
+Soient $E$ un $\R$-espace vectoriel, $f$ et $g$ deux éléments de
+$\Lin(E)$ tels que $fg-gf=id_E$.
+\begin{enumerate}
+\item Montrer que $E$ est de dimension infinie ou nulle.
+\item Montrer que $f$ n'est pas nilpotent.
+\item Donner un exemple de triplet $(E,f,g)$ vérifiant les conditions
+  précédentes.
+\end{enumerate}
+   %exo 574 RMS 134-1
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+  \item Si $E$ est de dimension finie $n\neq 0$, on a
+    $n=\tr(id_E)=\tr(fg-gf)=0$, absurde.
+  \item On a $f^ng-gf^n=nf^{n-1}$ par récurrence, ce qui donne une
+    contradiction si $f$ nilpotente d'indice $n$.
+  \item Mis du temps à trouver ! On considère $E:\K[X]$, $f:P\mapsto
+    P'$ et $g:P\mapsto XP$, de sorte que $gf(X^n)=nX^n$ et
+    $fg(X)=(n+1)X^n$.
+    
+    Remarque: dans le cas où $E$ est normé, $f$ et $g$ continus
+    n'existent pas: en notant $\|\cdot\|$ la norme d'opérateur, on aurait
+    $n\|f^{n-1}\|=\|f^ng-gf^n\|\le \big(\|fg\|+\|gf\|\big)\|f^{n-1}\|$
+    et donc $\|fg\|+\|gf\|$ non borné, absurde.
+  \end{enumerate}
+\end{solution}
+\end{enonce}
